@@ -1,0 +1,14 @@
+﻿{
+  "Name": "print list",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "9430x5LVdkuy6FOJbw16Dw",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/9430x5LVdkuy6FOJbw16Dw",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/0O4EFHd2L0ybfiQdjgsyUQ",
+  "Created": "2026-06-02T07:52:34.5080284Z",
+  "Updated": "2026-06-02T07:52:34.5080284Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

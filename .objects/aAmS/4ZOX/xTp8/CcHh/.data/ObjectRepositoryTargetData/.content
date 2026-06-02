@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LdAfDM21AUWkAuKe6nVeRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="kiosk-staging.farmstore-modern.us/1/kiosk/thanks" DesignTimeRectangle="8, 95, 1920, 945" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='OrWilcoKiosk' cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;" Guid="97356959-2974-423d-8db0-c1e81a1224cb" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='OrWilcoKiosk - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="94f913a331443120e4488aa6e615ecc5.jpg" xmlns="">0Y6Iddym8qEityCl4aTFKAw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5utWVDJ7g0OudhTXZsTT5A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="kiosk-staging.farmstore-modern.us" DesignTimeRectangle="56, 202, 43, 19" DesignTimeScaleFactor="0.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Kiosk' parentid='cdk-step-content-0-1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Kiosk' parentid='cdk-step-content-0-1' tag='SPAN' type='' class='text-30 text-semibold text-center' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Kiosk' /&gt;" Guid="9cfe8d7d-16be-499c-94ec-195394c51eca" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

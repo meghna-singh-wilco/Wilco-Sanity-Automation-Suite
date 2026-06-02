@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Y25mOi1UqECGpxGwd4sM8Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="kiosk-staging.farmstore-modern.us/1/kiosk/menu" DesignTimeRectangle="51, 376, 222, 175" DesignTimeScaleFactor="0.5" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;app-root&amp;gt;app-menu&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-nav-list-item&amp;gt;div' tabindex='0' tag='DIV' /&gt;" Guid="e9c69790-5c92-4ab6-a27d-6a47dd4959e9" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="0224abcbefa4038a1f7f38a1952ba5cf.jpg" xmlns="">0POgW1MX1MEyG57JRci984A</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

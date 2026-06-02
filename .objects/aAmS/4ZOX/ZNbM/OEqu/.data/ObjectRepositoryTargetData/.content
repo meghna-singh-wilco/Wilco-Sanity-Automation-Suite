@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rJwWlQFFZkWacZnAK3WJWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/shop-all" DesignTimeRectangle="1145, 604, 187, 50" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Evanger&amp;apos;s, Grain Free Quail Canned Dog Food, 12.8 oz' parentid='__nuxt' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Evanger&amp;apos;s, Grain Free Quail Canned Dog Food, 12.8 oz' parentid='__nuxt' tag='SPAN' type='' class='text-md text-left group-hover:underline group-hover:text-primary md:text-lg' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Evanger&amp;apos;s, Grain Free Quail Canned Dog Food, 12.8 oz' /&gt;" Guid="115d0b86-5f1b-41c2-ae2c-19e148c741f8" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Products | Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

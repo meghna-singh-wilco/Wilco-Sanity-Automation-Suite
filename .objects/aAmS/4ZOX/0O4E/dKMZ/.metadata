@@ -1,0 +1,13 @@
+﻿{
+  "Name": "SPAN",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "dKMZlSf8HEqUrrEMrmkiRg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/dKMZlSf8HEqUrrEMrmkiRg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/0O4EFHd2L0ybfiQdjgsyUQ",
+  "Created": "2026-06-02T06:23:13.5360166Z",
+  "Updated": "2026-06-02T06:23:13.5360166Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

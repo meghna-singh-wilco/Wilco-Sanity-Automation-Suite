@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Pay and Place Order",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "cy_NcxQgjECYdduNdETebA",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/cy_NcxQgjECYdduNdETebA",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-05-27T05:49:49.6312756Z",
+  "Updated": "2026-05-27T05:49:49.6312756Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

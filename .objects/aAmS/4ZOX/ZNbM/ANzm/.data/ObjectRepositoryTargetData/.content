@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FHASn_jz2kuG-GwDfr0Vhw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us" DesignTimeRectangle="358, 926, 206, 28" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='+ Add to cart' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='+ Add to cart' /&gt;" Guid="c1c3c2e0-ac83-45e6-9e6e-9183857938d7" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="333, 907, 256, 67" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='+ Add to cart' tag='BUTTON' type='button' class='w-full min-h-[45px] max-h-[45px] tracking-wide relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='+ Add to cart' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='+ Add to cart' /&gt;" Guid="ec1a49d2-2541-4221-a09e-fc6622dacad1" SearchSteps="FuzzySelector" />
+          <Target DesignTimeRectangle="333, 778, 239, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Add to cart for pricing' tag='SPAN' type='' class='leading-[20px] text-md font-bold md:text-lg' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add to cart for pricing' /&gt;" Guid="73b21d61-1bcd-4343-84ff-8978157c6501" SearchSteps="FuzzySelector" />
+          <Target DesignTimeRectangle="333, 619, 246, 75" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Natural Balance, Fish &amp;amp; Sweet Potato' tag='SPAN' type='' class='text-lg text-left group-hover:underline group-hover:text-primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Natural Balance, Fish &amp;amp; Sweet Potato' /&gt;" Guid="9382013f-8111-4db2-9bdb-131af49649d8" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="d39446afb009ce2c2ff0aafb3e812284.jpg" xmlns="">0Psg8UVnoxU6SWy0gB8kNTQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

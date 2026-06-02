@@ -1,0 +1,13 @@
+﻿{
+  "Name": "select",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "xm4hJye-0UuK5sFMtJZL7w",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/xm4hJye-0UuK5sFMtJZL7w",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/fGppjxErnkuUSlUNAaYHeQ",
+  "Created": "2026-06-02T06:02:50.1333944Z",
+  "Updated": "2026-06-02T06:02:50.1333944Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

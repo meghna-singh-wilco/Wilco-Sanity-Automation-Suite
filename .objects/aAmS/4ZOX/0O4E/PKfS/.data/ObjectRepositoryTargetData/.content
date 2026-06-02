@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="M4Xo2pFFQkGhKV-alMWM8g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="kiosk-staging.farmstore-modern.us/1/kiosk/search" DesignTimeRectangle="359, 657, 136, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname=' Add To List ' parentid='mat-mdc-dialog-0' tag='BUTTON' /&gt;" Guid="d8cc214b-dc56-4296-84ff-c89802b5b38b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="b23f45f786285a44d2bdbf9d82d4d4b7.jpg" xmlns="">08m2qZwirHEuSZJA0qSVPug</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Checkout",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "hPJPtzJ0Dky20xloi3T2bQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/hPJPtzJ0Dky20xloi3T2bQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-05-27T05:47:19.3476109Z",
+  "Updated": "2026-05-27T05:52:11.6752727Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Proceed to Checkout",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "aDXxEQmXfEqJyTPExw01XQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/aDXxEQmXfEqJyTPExw01XQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-05-25T12:46:23.8568485Z",
+  "Updated": "2026-05-25T12:46:23.8568485Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

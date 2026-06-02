@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Kiosk",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "wujsmnaYBkSVPUcLVJIFwQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/wujsmnaYBkSVPUcLVJIFwQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/fGppjxErnkuUSlUNAaYHeQ",
+  "Created": "2026-06-02T05:41:32.7322386Z",
+  "Updated": "2026-06-02T05:41:32.7322386Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Goats",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "g17YfGGmJkaxMxiK-hOkyA",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/g17YfGGmJkaxMxiK-hOkyA",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/0O4EFHd2L0ybfiQdjgsyUQ",
+  "Created": "2026-06-02T06:25:46.8920176Z",
+  "Updated": "2026-06-02T06:25:46.8920176Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

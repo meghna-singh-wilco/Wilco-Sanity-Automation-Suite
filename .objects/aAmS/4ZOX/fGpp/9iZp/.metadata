@@ -1,0 +1,16 @@
+﻿{
+  "Name": "McMinnville Farm Store",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "9iZp5koqVki_jLwcybUkXA",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/9iZp5koqVki_jLwcybUkXA",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/fGppjxErnkuUSlUNAaYHeQ",
+  "Created": "2026-06-02T05:41:18.6641977Z",
+  "Updated": "2026-06-02T11:24:00.089857Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

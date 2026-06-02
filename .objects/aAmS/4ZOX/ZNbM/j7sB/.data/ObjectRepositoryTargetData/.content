@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="arOCbyYIpkeau6HLxhw95g" Reference="9dHQDpKOSEKlUU6D1TIPyQ/j7sBf04AC02widx05QzHNw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="vArlRvevx0ahg_RKzOrYRw" DesignTimeRectangle="1229, 558, 37, 38" DesignTimeScaleFactor="1.5" ElementType="RadioButton" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='store-16' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='store-16' tag='INPUT' type='radio' class='peer w-full h-full absolute top-0 left-0 z-10 p-0 m-0 opacity-0 rounded-md outline-none border-2 border-surface-200 dark:border-surface-700 appearance-none cursor-pointer' aaname='Pickup in VancouverAddress_35396238Vancouver, WA 986849 in stock at Vancouver' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="4ae1929d-06a6-4f3f-8b2e-47509b1951b4" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/j7sBf04AC02widx05QzHNw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1229, 494, 616, 324" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='store_menu' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='store_menu' tag='LABEL' type='' class='px-3 py-5 cursor-pointer' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Pickup in Vancouver&amp;#xA;&amp;#xA;Address_35396238&amp;#xA;&amp;#xA;Vancouver, WA 98684&amp;#xA;&amp;#xA;9 in stock at Vancouver' /&gt;" Guid="ea289034-9d31-4979-a03f-80ab36924350" ImageBase64="" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

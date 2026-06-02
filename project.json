@@ -1,0 +1,170 @@
+{
+  "name": "Wilco KT",
+  "projectId": "15c43601-4164-4516-b88c-ee4267455db2",
+  "description": "Blank Process",
+  "main": "Kiosk.xaml",
+  "dependencies": {
+    "ReporterForUiPath.Activities": "[3.0.1]",
+    "UiPath.Excel.Activities": "[3.2.1]",
+    "UiPath.Persistence.Activities": "[1.9.0]",
+    "UiPath.System.Activities": "[26.2.6]",
+    "UiPath.Testing.Activities": "[25.10.2]",
+    "UiPath.UIAutomation.Activities": "[25.10.33]",
+    "UiPath.UIAutomation.Activities.Design.RecoveryPanel": "[24.10.19]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "26.0.193.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "exceptionHandlerWorkflow": "Kiosk.xaml",
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": true,
+    "workflowSerialization": "NewtonsoftJson",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e5239492-b1ee-48ec-81bd-8a51c678646c",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Verify Order number in Back40.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e257855c-d0f4-4fcd-a5ad-0a224359191f",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Add to Cart product from PLP.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "83f907b0-c00e-4a5f-9625-b0443fee3c54",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Add to Cart.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cc606c0e-2125-453f-a851-a40399cf7ae9",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Apply Coupon code.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "edd8cabf-5cb5-488a-b830-eb6d888ca44c",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Create Account.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "2ff67b68-0914-4b21-905a-0a73081ef552",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Logout.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3b6dfe79-dac6-4d15-bdc0-0c0c1efed238",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Mixed Order.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "466d981a-85f8-49e4-b5c2-697a758b4ebf",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Pickup Order creation with Invalid card details.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f8c596b9-685c-4f8e-9c4f-2aa097749d10",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Pickup Order.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "2993e773-29a8-4cc4-be62-d32e6fe8fc00",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Place Order as Guest.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "867d6574-308a-4335-aeae-771c53b1bda4",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Ship To Home Order.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f4cb93b2-73f3-40a0-93b8-22b85f57eeb9",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Verify created Order in All purchase history.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "784469fe-b859-478a-9fc8-90aca4996e09",
+        "testCaseType": "TestCase",
+        "fileName": "Test Cases\\Login.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "66a94012-d0c9-4273-87c9-0e48298c3635",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test Cases\\Login Kiosk.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "584b4b95-e6f2-4a1a-b461-cf93cf23476e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test Cases\\Start Sale-Kiosk.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "eb21de21-5aa1-4b1a-9001-055ead739b7f",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test Cases\\Add To List-Kiosk.xaml"
+      }
+    ],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "b653e053-a97a-4179-94ee-9fcf6ac2c1ba",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Kiosk.xaml",
+      "uniqueId": "f9f6c38b-6c68-4c45-ad49-2826f31d1d00",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

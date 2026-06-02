@@ -1,0 +1,6 @@
+{
+  "Name": "Wilco KT",
+  "ProjectType": "Process",
+  "Description": "Blank Process",
+  "MainFile": "Kiosk.xaml"
+}

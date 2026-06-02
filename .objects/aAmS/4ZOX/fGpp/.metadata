@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome OrWilcoKiosk",
+  "Type": "Screen",
+  "Id": "fGppjxErnkuUSlUNAaYHeQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/fGppjxErnkuUSlUNAaYHeQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/4ZOXkI0BhkWq8H_4-TFz4Q",
+  "Created": "2026-06-02T05:40:30.4929351Z",
+  "Updated": "2026-06-02T05:40:30.4929351Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

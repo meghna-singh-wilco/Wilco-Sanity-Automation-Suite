@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="9M4cybQaoEyEzGBFKLuqIg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="kiosk-staging.farmstore-modern.us/1/kiosk/menu" DesignTimeRectangle="363, 526, 150, 140" DesignTimeScaleFactor="0.5" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;app-root&amp;gt;app-menu&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-nav-list-item&amp;gt;div' idx='6' tabindex='0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='nav-list-item-container sm' tabindex='0' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:tabindex='fuzzy' fuzzylevel:tabindex='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='GOATS' /&gt;" Guid="25f586b5-4c84-4a58-9d13-91ad0aa06310" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

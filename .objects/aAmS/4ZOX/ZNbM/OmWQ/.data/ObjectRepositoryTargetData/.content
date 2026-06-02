@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Uu-H1_C2Q0iCiK0VlR9v-Q" Reference="9dHQDpKOSEKlUU6D1TIPyQ/OmWQ6_tEd0WhN4CWHnKlWA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="TbatD42PqkS2NX3P5EmEqw" DesignTimeRectangle="842, 610, 133, 24" DesignTimeScaleFactor="1.5" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname=' Check other stores ' tag='BUTTON' /&gt;" Guid="fe502374-9391-4525-a1bc-02b074e01a0e" Reference="9dHQDpKOSEKlUU6D1TIPyQ/OmWQ6_tEd0WhN4CWHnKlWA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="09863b8bb5b9273919782b1ced4d3dd0.jpg" xmlns="">0Ng1-re-ab02Wk97EINmF_Q</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

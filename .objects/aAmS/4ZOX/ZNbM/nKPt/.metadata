@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Card Code",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "nKPtV43x6Um5uacuVBwTUg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/nKPtV43x6Um5uacuVBwTUg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-05-27T05:49:49.5901312Z",
+  "Updated": "2026-05-27T05:49:49.5901312Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
