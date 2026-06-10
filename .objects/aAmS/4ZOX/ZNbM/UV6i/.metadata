@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Credit Card(1)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "UV6iafaI3kCtpt5lzY5ALw",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/UV6iafaI3kCtpt5lzY5ALw",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T06:04:50.765763Z",
+  "Updated": "2026-06-08T06:04:50.765763Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

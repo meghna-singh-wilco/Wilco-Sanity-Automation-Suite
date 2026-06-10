@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="NZ8JMV-Nrk2sNpoGtQXtKA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us" DesignTimeRectangle="673, 223, 760, 65" DesignTimeScaleFactor="1.3499999046325684" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='w-full h-full bg-transparent focus:outline-0 placeholder:text-neutral-900 text-lg' placeholder='Search Your Farm Store' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b3fcb58f-6509-4b49-b1b9-b9bd91142e6e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="e705473aa515abdc382fea9c8d94ebf9.jpg" xmlns="">e705473aa515abdc382fea9c8d94ebf9.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

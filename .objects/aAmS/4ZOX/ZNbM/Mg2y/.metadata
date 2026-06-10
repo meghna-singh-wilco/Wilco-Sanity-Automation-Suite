@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Billing Address_Zip code",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "Mg2y9CkB7k2oKELISuUYOg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/Mg2y9CkB7k2oKELISuUYOg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T11:21:44.3253191Z",
+  "Updated": "2026-06-08T11:21:44.3253191Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

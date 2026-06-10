@@ -1,5 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Create_Account" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Create_Account" this:Create_Account.reportId="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="isButtonEnabled" Type="OutArgument(x:Boolean)" />
     <x:Property Name="suiteId" Type="InArgument(x:String)" />
     <x:Property Name="reportId" Type="InArgument(x:Int32)" />
   </x:Members>
@@ -56,6 +57,8 @@
       <x:String>UiPath.OCR.Contracts</x:String>
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Shared.Telemetry</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -122,9 +125,11 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_Account" sap:VirtualizedContainerService.HintSize="988,2497" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_Account" sap:VirtualizedContainerService.HintSize="983,8720" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="testId" />
     </Sequence.Variables>
@@ -133,50 +138,246 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="StartSuite_1" ReportId="[reportId]" SuiteName="Create Account Suite" suiteId="[SuiteId]" />
-    <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="StartTest_1" Priority="Low" ReportId="[reportId]" SuiteId="[suiteId]" TagName="Login" TestName="Create Account Test" testId="[testId]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome: Shop Home, Backyard, Pet, Farm &amp; Rura" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1630" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Timeout="5" Version="V2" WindowResize="Maximize">
+    <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="504,118" sap2010:WorkflowViewState.IdRef="StartSuite_4" ReportId="[reportId]" SuiteName="Create Account Suite" suiteId="[SuiteId]" />
+    <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="504,118" sap2010:WorkflowViewState.IdRef="StartTest_4" Priority="Low" ReportId="[reportId]" SuiteId="[suiteId]" TagName="Login" TestName="Create Account Test" testId="[testId]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome Shop Home, Backyard, Pet, Farm &amp; Rural" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,7242" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Timeout="5" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1427" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,7039" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Default="[&quot;test_&quot; + Now.ToString(&quot;HHmmss&quot;) +&quot;@gmail.com&quot;]" Name="Email" />
-              <Variable x:TypeArguments="x:String" Default="[&quot;Testln_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;)]" Name="lastname" />
-              <Variable x:TypeArguments="x:String" Default="[&quot;Testfn_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;)]" Name="firstName" />
+              <Variable x:TypeArguments="x:String" Name="Email">
+                <Variable.Default>
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;test&quot; + Now.ToString(&quot;HHmmss&quot;) +&quot;@yopmail.com&quot;" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="lastname">
+                <Variable.Default>
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Testln&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;)" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="firstName">
+                <Variable.Default>
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Testfn&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;)" />
+                </Variable.Default>
+              </Variable>
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="8" DisplayName="Click 'LoginRegister'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Timeout="5" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="9SprmxZpCkKeqPvTCeN7QA" DesignTimeRectangle="1479, 230, 117, 13" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login/Register' type='' tag='SPAN' class='hidden md:flex' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="79b4d6b0-28f4-4ca2-bc4a-e9f1f36d6c93" InformativeScreenshot="c42bcf060ccf2ef22e4406935093b954.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/ByTSubB4FkeboZ5qmGinOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+            <uix:NCheckState DisplayName="Check App State 'Login/Register'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,975" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Timeout="10" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="8" DisplayName="Click 'LoginRegister'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Timeout="5" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="9SprmxZpCkKeqPvTCeN7QA" DesignTimeRectangle="1479, 230, 117, 13" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login/Register' type='' tag='SPAN' class='hidden md:flex' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="79b4d6b0-28f4-4ca2-bc4a-e9f1f36d6c93" InformativeScreenshot="c42bcf060ccf2ef22e4406935093b954.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/ByTSubB4FkeboZ5qmGinOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1452, 221, 150, 31" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Login/RegisterLogin' type='' tag='BUTTON' class='flex flex-col md:flex-row md:gap-2 items-center text-gray text-[18px] group md:h-[28px] md:w-[133px]' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="bc2f0c52-c499-4d70-b6f5-ae17939ad2cd" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_6" ReportId="[reportId]" Status="Pass" StepName="User able to click on Login/Register" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Private: Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_7" ReportId="[reportId]" Status="Fail" StepName="User not able to click on Login/Register button" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="tUd7yKNTXESkYFdbyA50Cw" DesignTimeRectangle="1519, 344, 157, 18" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login/Register' type='' tag='SPAN' class='hidden md:flex' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="e97e98f5-3918-46c2-8a64-0ee0e999585a" InformativeScreenshot="21e1b449d58d4c3b5e13ced7093da5f2.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/MityImcLb0Wg-gqWqHFErQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1452, 221, 150, 31" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Login/RegisterLogin' type='' tag='BUTTON' class='flex flex-col md:flex-row md:gap-2 items-center text-gray text-[18px] group md:h-[28px] md:w-[133px]' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="bc2f0c52-c499-4d70-b6f5-ae17939ad2cd" SearchSteps="FuzzySelector" />
+                      <uix:Target DesignTimeRectangle="1483, 332, 200, 42" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Login/RegisterLogin' type='' tag='BUTTON' class='flex flex-col md:flex-row md:gap-2 items-center text-gray text-[18px] group md:h-[28px] md:w-[133px]' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="32a4f901-b845-4b6e-acfd-51cc41e57088" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset />
+                  </uix:TargetAnchorable.PointOffset>
                 </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="3" DisplayName="Click 'Create an Account Button'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="nLFKBvnmwUeI2mTiinOhzA" DesignTimeRectangle="1277, 499, 203, 28" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Create an Account' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Create an Account' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Create an Account' /&gt;" Guid="bd10014f-066d-44a0-b3d4-6124c5dca174" ImageBase64="" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/Y1rwJSRRjUyOtv6T3_pVyw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Create an Account Button'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,975" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Timeout="10" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="3" DisplayName="Click 'Create an Account Button'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="l-TtnMKeQ0uvfatbyJwbow" DesignTimeRectangle="1277, 499, 203, 28" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Create an Account' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Create an Account' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Create an Account' /&gt;" Guid="bd10014f-066d-44a0-b3d4-6124c5dca174" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/MvseO6zVzUqlzB5FeEdpQw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1250, 478, 257, 70" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Create an Account' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Create an Account' tag='BUTTON' type='button' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border text-gray bg-white border border-2 border-primary-700 hover:bg-primary-300/20 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Create an Account' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Create an Account' /&gt;" Guid="84abf525-f802-453f-b550-34a5dafa2464" ImageBase64="" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_9" ReportId="[reportId]" Status="Pass" StepName="User clicked on Create an Account Button" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_10" ReportId="[reportId]" Status="Fail" StepName="User not able to  click on Create an account button" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="l-TtnMKeQ0uvfatbyJwbow" DesignTimeRectangle="1277, 499, 203, 28" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Create an Account' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Create an Account' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Create an Account' /&gt;" Guid="bd10014f-066d-44a0-b3d4-6124c5dca174" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/MvseO6zVzUqlzB5FeEdpQw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="1250, 478, 257, 70" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Create an Account' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Create an Account' tag='BUTTON' type='button' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border text-gray bg-white border border-2 border-primary-700 hover:bg-primary-300/20 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Create an Account' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Create an Account' /&gt;" Guid="84abf525-f802-453f-b550-34a5dafa2464" ImageBase64="" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="[firstName]" Version="V5">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="liGMysk7FEuOq4ku71-Edw" DesignTimeRectangle="766, 420, 404, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a name' aaname='First Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0c2ad908-ed93-4838-842d-48f2923c8a15" InformativeScreenshot="f3cb25f36bf4a1ed7026ee45ee369ef4.jpg" IsResponsive="True" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/_AUVq99kX0SrT6367kMs6A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'First Name'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1932" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1369" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="[firstName]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="R9MWLs7vrka9b9pDpbo5JQ" DesignTimeRectangle="766, 420, 404, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a name' aaname='First Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0c2ad908-ed93-4838-842d-48f2923c8a15" InformativeScreenshot="f3cb25f36bf4a1ed7026ee45ee369ef4.jpg" IsResponsive="True" Reference="9dHQDpKOSEKlUU6D1TIPyQ/YPdH9NvJkUaEFN0sVBoWIA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="766, 375, 404, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-bold block mb-1' aaname='First Name' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='First Name' /&gt;" Guid="858ee5d4-9236-4eb8-986f-0a42c45f0cc7" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="StepStatus_4" ReportId="[reportId]" Status="Compare" StepName="User entered First name" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="[lastname]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="rfMJ4ucD0EeTiDVvh64OLQ" DesignTimeRectangle="1210, 420, 404, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a name' aaname='Last Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="fa847d11-f195-4768-b258-da9dbf8d4692" InformativeScreenshot="5e2f410ed9f06c04a66fd7f74c9cd168.jpg" IsResponsive="True" Reference="9dHQDpKOSEKlUU6D1TIPyQ/Lnn8Z76JT0SyRuNFgCs3Rg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1210, 375, 404, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Last Name' /&gt;" Guid="19d42653-ebe1-4982-9e6b-13ebd1c4c7c2" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayAfter="5" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="[Email]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="RXaijV1ic0Whak-q6hRS1g" DesignTimeRectangle="766, 569, 848, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter an email' aaname='Email Address' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="243026f2-ab68-4bb1-9de0-b680ce1eb498" InformativeScreenshot="44453b7a2f1933a52456155caaacc8a9.jpg" IsResponsive="True" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/3H9okNiKakaVOljl3uUNkQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="766, 525, 848, 38" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email Address' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Email Address' /&gt;" Guid="31a114a5-41c1-4f50-904b-62f97b88ad90" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayAfter="20" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="Testing@123" Timeout="5" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="fwRzaorduUmW4rF-jc7aEg" DesignTimeRectangle="448, 513, 636, 56" DesignTimeScaleFactor="1.125" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a password' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="609cdcb4-b71d-4178-91d6-b8bd348bfafd" InformativeScreenshot="5425881bef8ec99d51ee273f549fb883.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/fokh4EjopEG_bDgbwDvNOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="448, 480, 636, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password' /&gt;" Guid="0f97fb98-2d36-4de9-9ab3-77d424de09be" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_5" ReportId="[reportId]" Status="Pass" StepName="User entered Email id and Password" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_11" ReportId="[reportId]" Status="Fail" StepName="User not able to enter detail to create account" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="R9MWLs7vrka9b9pDpbo5JQ" DesignTimeRectangle="766, 420, 404, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='firstName' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a name' aaname='First Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0c2ad908-ed93-4838-842d-48f2923c8a15" InformativeScreenshot="f3cb25f36bf4a1ed7026ee45ee369ef4.jpg" IsResponsive="True" Reference="9dHQDpKOSEKlUU6D1TIPyQ/YPdH9NvJkUaEFN0sVBoWIA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="766, 375, 404, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-bold block mb-1' aaname='First Name' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='First Name' /&gt;" Guid="858ee5d4-9236-4eb8-986f-0a42c45f0cc7" SearchSteps="FuzzySelector" />
@@ -186,50 +387,189 @@
                     <uix:PointOffset />
                   </uix:TargetAnchorable.PointOffset>
                 </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,248" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="[lastname]" Version="V5">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="rmr4KPMy106teLYQW9dRRw" DesignTimeRectangle="1210, 420, 404, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='lastName' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a name' aaname='Last Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="fa847d11-f195-4768-b258-da9dbf8d4692" InformativeScreenshot="5e2f410ed9f06c04a66fd7f74c9cd168.jpg" IsResponsive="True" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/tiQMERTBzUKLuPrIZmYdUA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Create Your Profile'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[isButtonEnabled]" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+              <uix:NCheckElement.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="v7c-Yc01PEOD4jh_JJ_Vwg" DesignTimeRectangle="849, 714, 139, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Create Your Profile' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Create Your Profile' /&gt;" Guid="dab1b361-6742-4e5e-9927-039caa89bca9" InformativeScreenshot="be9b807d52503152816e5e006bfe5d15.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/Qxz_2exsL0-l-FEnGz7HGA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1210, 375, 404, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Last Name' /&gt;" Guid="19d42653-ebe1-4982-9e6b-13ebd1c4c7c2" SearchSteps="FuzzySelector" />
+                      <uix:Target DesignTimeRectangle="832, 701, 173, 45" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Create Your Profile' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Create Your Profile' /&gt;" Guid="2978cb07-92f0-4160-b440-dfa9956e186d" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckElement.Target>
+            </uix:NCheckElement>
+            <If Condition="[isButtonEnabled = True]" sap:VirtualizedContainerService.HintSize="452,1084" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,727" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,315" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="4" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+                    <uix:NMouseScroll.SearchedElement>
+                      <uix:SearchedElement>
+                        <uix:SearchedElement.InUiElement>
+                          <InArgument x:TypeArguments="ui:UiElement" />
+                        </uix:SearchedElement.InUiElement>
+                        <uix:SearchedElement.OutUiElement>
+                          <OutArgument x:TypeArguments="ui:UiElement" />
+                        </uix:SearchedElement.OutUiElement>
+                        <uix:SearchedElement.Target>
+                          <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="v7c-Yc01PEOD4jh_JJ_Vwg" DesignTimeRectangle="849, 714, 139, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Create Your Profile' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Create Your Profile' /&gt;" Guid="dab1b361-6742-4e5e-9927-039caa89bca9" InformativeScreenshot="be9b807d52503152816e5e006bfe5d15.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/Qxz_2exsL0-l-FEnGz7HGA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="832, 701, 173, 45" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Create Your Profile' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Create Your Profile' /&gt;" Guid="2978cb07-92f0-4160-b440-dfa9956e186d" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:SearchedElement.Target>
+                        <uix:SearchedElement.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:SearchedElement.Timeout>
+                      </uix:SearchedElement>
+                    </uix:NMouseScroll.SearchedElement>
+                  </uix:NMouseScroll>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create Your Profile'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="v7c-Yc01PEOD4jh_JJ_Vwg" DesignTimeRectangle="849, 714, 139, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Create Your Profile' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Create Your Profile' /&gt;" Guid="dab1b361-6742-4e5e-9927-039caa89bca9" InformativeScreenshot="be9b807d52503152816e5e006bfe5d15.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/Qxz_2exsL0-l-FEnGz7HGA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="832, 701, 173, 45" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Create Your Profile' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Create Your Profile' /&gt;" Guid="2978cb07-92f0-4160-b440-dfa9956e186d" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_3" ReportId="[reportId]" Status="Pass" StepName="User clicked on Create your profile" TakeScreenshot="True" TestId="[TestId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_12" ReportId="[reportId]" Status="Fail" StepName="Create Your profile button disabled" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="452,167" sap2010:WorkflowViewState.IdRef="StepStatus_16" ReportId="[reportId]" Status="Compare" StepName="User came back to Home screen" TakeScreenshot="True" TestId="[testId]">
+              <ra:StepStatus.StepDescription>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ra:StepStatus.StepDescription>
+            </ra:StepStatus>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NCheckState DisplayName="Check App State 'Profile Icon'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,808" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Profile Icon'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="VMlaXRVaF0CMudJJ8pEi3Q" DesignTimeRectangle="1440, 232, 19, 22" ElementType="Icon" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='svg-inline--fa fa-user text-lg group-hover:text-primary-700' matching:class='fuzzy' fuzzylevel:class='0.0' tag='svg' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='' /&gt;" Guid="9cdfcae8-6170-47c7-98da-b61f3310e833" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAaCAYAAABctMd+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHSSURBVEhLxZQhiwJREMc3afADWAUFgyCiyWZaUIs2MZiMFkFELFrXIBgMJj+CQdBoM1lMZsEgiohJ0DDHDLxhd/be7t1ycj94LLz/zG/3DU8N+CCG3PhL/lf+eDxgOBxCsVgEwzDoORgMaN8PT/lqtYJUKkVSuXAfcy+08vP5DIlEgkS1Wg222y3t41O9EHOs06GVt9ttErRaLRkRhUKB8l6vJyNGK8/n89S82+1kREwmE8rr9bqMGK1czVbHZrOhHE+gQ9utboeatWQ8HlPebDZlxGjleN3Ul12vVxnzybBOh1aOqFuRTCbBsiwaBT6VGHMvPOWIaZossy/c98NXjuDRG40GjQifXqOw8yN5UHzl7/ebZm1f+/1eln2LVo5HL5fLEAqFXPPGFY1G6W9hNpvJVsYlPxwOdDuUJBwO06zlsr8ol8vB8XiUKqf8drtxQyaTgcViAc/n017CYO10OoV4PM49r9fLUeOQVyoVKiqVSnC/3+2RlsvlQvXY1+12HRnL1S8ynU7D6XRyFPmB9diH/ev1mvdZXq1WKRyNRhz+hn6/T/2dTof3WI6zi0QidIKgC+XZbNYtj8VijhsQdKHHJZ/P564vCbKWy6Vb/gm+AAHOuo3EH32cAAAAAElFTkSuQmCC" InformativeScreenshot="04e625ada4ce2fb016e28c1083087605.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/l-eb1aptakyT5YeX1GMMvw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector, Image" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1365, 231, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg&amp;gt;path' tag='path' /&gt;" Guid="7c6b8314-ddf4-4c73-9fff-999a1c168840" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJsSURBVEhLzZbPS1RxFMXfykZrEyXDlBaGkoIJFWiDKUGRYCORQSSFGORUG4fKYGCwKYwWilqk/bBJKiQixEVBEULhxohaBK37W26cB/fyffe+efOCJlp8FjP33O95d+Z7z4z369sy/Us8/Ua1+b8Mf3xepOniJRo520ed+1upri5BzU076HSmlwpXz9GL+bzpqURZw6X7N6i9rYk8z4uk/1gX/Vwvmf5yhBoe7TkgB27ZXEuZ42kaGx2kp7PXaaqYpdHzJ6jn0L6A8WT+gjknDGPY2rJLDulNd9DayrRpYrLDmYDpp9UZo9EEDPO5IWnOZQeNOIz1t3PS03WwzdQ1Yvj14wLtTG33GzGlFkbxpnRTTIvjw6buIoazk1f8hsSmGnr1uGCEleCPd29zo6m5iOHlkQG/4VT/YSOKw7vlOzLl97VHps6IYXdnuy/Ojw0ZUVxqEzX+GS8Xyu+nGOL6Q/zs3rgRxYX3FpdP1xgxRIJAjD3Torikktv8M+4WLpoaI4aIK4ix1FoUhy8f5uU7jLp0YohshBgJokVxeDJzTQw33j8wdUYMEcTcgCuuhZVo2dPg9yIGdc0lkDQIYjZFgmhxOc6cPCJ9WA9ddwkYIvW5ESBBdIMGccZ63ANd15jwRuq7pvh49VMjBh9O5ShZvzWgBStLt4xJpCFA6rtPDrDU2LOGVL0xGehLB16vPr9tzow0ZBDEyEZtwOB3k1cAk7m114sT5ryKhgyyEXGFBEEw4LvF3mkdJnNNwyIuluGfgMlc09JcMCr/uiHAZK4pLhjXqmIIMBkb4jbz+1UzBJhsd2My8NejqoZh/AZn2cc4F/0u6AAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_15" ReportId="[reportId]" Status="Fail" StepName="User not able to click on profile Icon" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="VMlaXRVaF0CMudJJ8pEi3Q" DesignTimeRectangle="1440, 232, 19, 22" ElementType="Icon" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='svg-inline--fa fa-user text-lg group-hover:text-primary-700' matching:class='fuzzy' fuzzylevel:class='0.0' tag='svg' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='' /&gt;" Guid="9cdfcae8-6170-47c7-98da-b61f3310e833" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAaCAYAAABctMd+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHSSURBVEhLxZQhiwJREMc3afADWAUFgyCiyWZaUIs2MZiMFkFELFrXIBgMJj+CQdBoM1lMZsEgiohJ0DDHDLxhd/be7t1ycj94LLz/zG/3DU8N+CCG3PhL/lf+eDxgOBxCsVgEwzDoORgMaN8PT/lqtYJUKkVSuXAfcy+08vP5DIlEgkS1Wg222y3t41O9EHOs06GVt9ttErRaLRkRhUKB8l6vJyNGK8/n89S82+1kREwmE8rr9bqMGK1czVbHZrOhHE+gQ9utboeatWQ8HlPebDZlxGjleN3Ul12vVxnzybBOh1aOqFuRTCbBsiwaBT6VGHMvPOWIaZossy/c98NXjuDRG40GjQifXqOw8yN5UHzl7/ebZm1f+/1eln2LVo5HL5fLEAqFXPPGFY1G6W9hNpvJVsYlPxwOdDuUJBwO06zlsr8ol8vB8XiUKqf8drtxQyaTgcViAc/n017CYO10OoV4PM49r9fLUeOQVyoVKiqVSnC/3+2RlsvlQvXY1+12HRnL1S8ynU7D6XRyFPmB9diH/ev1mvdZXq1WKRyNRhz+hn6/T/2dTof3WI6zi0QidIKgC+XZbNYtj8VijhsQdKHHJZ/P564vCbKWy6Vb/gm+AAHOuo3EH32cAAAAAElFTkSuQmCC" InformativeScreenshot="04e625ada4ce2fb016e28c1083087605.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/l-eb1aptakyT5YeX1GMMvw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector, Image" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1365, 231, 24, 24" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg&amp;gt;path' tag='path' /&gt;" Guid="7c6b8314-ddf4-4c73-9fff-999a1c168840" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJsSURBVEhLzZbPS1RxFMXfykZrEyXDlBaGkoIJFWiDKUGRYCORQSSFGORUG4fKYGCwKYwWilqk/bBJKiQixEVBEULhxohaBK37W26cB/fyffe+efOCJlp8FjP33O95d+Z7z4z369sy/Us8/Ua1+b8Mf3xepOniJRo520ed+1upri5BzU076HSmlwpXz9GL+bzpqURZw6X7N6i9rYk8z4uk/1gX/Vwvmf5yhBoe7TkgB27ZXEuZ42kaGx2kp7PXaaqYpdHzJ6jn0L6A8WT+gjknDGPY2rJLDulNd9DayrRpYrLDmYDpp9UZo9EEDPO5IWnOZQeNOIz1t3PS03WwzdQ1Yvj14wLtTG33GzGlFkbxpnRTTIvjw6buIoazk1f8hsSmGnr1uGCEleCPd29zo6m5iOHlkQG/4VT/YSOKw7vlOzLl97VHps6IYXdnuy/Ojw0ZUVxqEzX+GS8Xyu+nGOL6Q/zs3rgRxYX3FpdP1xgxRIJAjD3Torikktv8M+4WLpoaI4aIK4ix1FoUhy8f5uU7jLp0YohshBgJokVxeDJzTQw33j8wdUYMEcTcgCuuhZVo2dPg9yIGdc0lkDQIYjZFgmhxOc6cPCJ9WA9ddwkYIvW5ESBBdIMGccZ63ANd15jwRuq7pvh49VMjBh9O5ShZvzWgBStLt4xJpCFA6rtPDrDU2LOGVL0xGehLB16vPr9tzow0ZBDEyEZtwOB3k1cAk7m114sT5ryKhgyyEXGFBEEw4LvF3mkdJnNNwyIuluGfgMlc09JcMCr/uiHAZK4pLhjXqmIIMBkb4jbz+1UzBJhsd2My8NejqoZh/AZn2cc4F/0u6AAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Logout'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,772" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_13" ReportId="[reportId]" Status="Pass" StepName="New Account created successfully" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_14" ReportId="[reportId]" Status="Fail" StepName="Account was not created" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="Skk_k-N3cEG7-4u86E6E7w" DesignTimeRectangle="1444, 674, 74, 33" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='account_menu_3' tag='SPAN' type='' class='ml-3 text-lg font-bold' aaname='Logout' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Logout' /&gt;" Guid="e98f61c9-17c1-4c12-ba0f-440aba1ab103" InformativeScreenshot="b4ab8022a0e6f1f3b8e9ad8207b9e12f.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/22H4cfZ-3k-lLFmdSu8auA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1381, 652, 467, 78" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Logout' tag='BUTTON' type='' class='items-center hidden no-underline sm:flex p-3 w-full justify-between !text-gray' aaname='Logout' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Logout' /&gt;" Guid="231cf30a-c2c6-435b-addf-674dcf4246cf" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                   <uix:TargetAnchorable.PointOffset>
                     <uix:PointOffset />
                   </uix:TargetAnchorable.PointOffset>
                 </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayAfter="5" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="[Email]" Version="V5">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="RXaijV1ic0Whak-q6hRS1g" DesignTimeRectangle="766, 569, 848, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='text' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter an email' aaname='Email Address' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="243026f2-ab68-4bb1-9de0-b680ce1eb498" InformativeScreenshot="44453b7a2f1933a52456155caaacc8a9.jpg" IsResponsive="True" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/3H9okNiKakaVOljl3uUNkQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="766, 525, 848, 38" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email Address' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Email Address' /&gt;" Guid="31a114a5-41c1-4f50-904b-62f97b88ad90" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset />
-                  </uix:TargetAnchorable.PointOffset>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayAfter="20" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,237" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="6e8e8a24-49f1-4c35-8ca4-8201a4f0ce2a" Text="Testing@123" Timeout="5" Version="V5">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="fwRzaorduUmW4rF-jc7aEg" DesignTimeRectangle="448, 513, 636, 56" DesignTimeScaleFactor="1.125" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a password' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="609cdcb4-b71d-4178-91d6-b8bd348bfafd" InformativeScreenshot="5425881bef8ec99d51ee273f549fb883.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/fokh4EjopEG_bDgbwDvNOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="448, 480, 636, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password' /&gt;" Guid="0f97fb98-2d36-4de9-9ab3-77d424de09be" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset />
-                  </uix:TargetAnchorable.PointOffset>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-            </uix:NTypeInto>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -241,7 +581,14 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="KfP61lbSJ0CIizIFsDM1mA" IconBase64="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" InformativeScreenshot="ec58f7b0e76ba35f3e1b0f2cb328683a.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/9AeyWLKYaESrUeAMLr0kIw" Selector="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" Url="https://staging.farmstore-modern.us/" Version="V3" />
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="5s9Y8wYSyUOVDApW26I0kA" IconBase64="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" InformativeScreenshot="3f79ae5bd42fc27532bac205f8ce6835.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg" Selector="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" Url="https://staging.farmstore-modern.us/" Version="V3">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -250,195 +597,218 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="f53e51ad-7d82-42f5-97e7-0caf0ef63cc6" DisplayName="CV Screen Scope 'DIV'" sap:VirtualizedContainerService.HintSize="434,585" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
-      <p:CVScope.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,328.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="504,889" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,778" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="f53e51ad-7d82-42f5-97e7-0caf0ef63cc6" DisplayName="CV Screen Scope 'DIV'" sap:VirtualizedContainerService.HintSize="434,718" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+            <p:CVScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,328.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <p:CvClickWithDescriptor DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="8" DelayMS="5" Descriptor="[&quot;Target: Text 'Create Your Profile' (338,466,128,14)&quot;]" DesignTimeCacheId="f53e51ad-7d82-42f5-97e7-0caf0ef63cc6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="e4c524a6c6f12bc79373f2b2a819fa44" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" TimeoutMS="5" Version="V6">
+                    <p:CvClickWithDescriptor.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </p:CvClickWithDescriptor.CursorPosition>
+                    <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <uc:CvDescriptor Id="f6e78ffe-569a-4780-922e-caacaf9b6ce3">
+                        <uc:CvDescriptor.Target>
+                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="338, 466, 128, 14" ElementType="Text" Text="Create Your Profile" />
+                        </uc:CvDescriptor.Target>
+                      </uc:CvDescriptor>
+                    </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                    <p:CvClickWithDescriptor.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c93c5a26-6bc4-4429-980b-ff74919e1ed4">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </p:CvClickWithDescriptor.Target>
+                  </p:CvClickWithDescriptor>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="400,158" sap2010:WorkflowViewState.IdRef="StepStatus_2" ReportId="[reportId]" Status="Pass" StepName="Account created successfully" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ra:StepStatus>
+                </Sequence>
+              </ActivityAction>
+            </p:CVScope.Body>
+            <p:CVScope.DesignTimeCache>
+              <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+            </p:CVScope.DesignTimeCache>
+            <p:CVScope.DesignTimeCacheContainer>
+              <uc:CvCacheContainer>
+                <uc:CvCacheContainer.Caches>
+                  <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                    <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Create Your (Main)" Id="f53e51ad-7d82-42f5-97e7-0caf0ef63cc6" InformativeScreenshot="ed5fd1a51227d296c32f35a3ec0968ec" LogicalPosition="1920, 87" OcrText="X Log In Create Your Account Sign in to Access Rewards First Name Last Name Enter a name Enter a name Login Email Address trupti.bhosale@yopmail.com Password O Success! CLOUDI FLARE Priyasy Helo Create Your Profile" Position="1920, 87" ScaleFactor="1.5" ScreenshotGuid="b79d4be4-c878-4c53-9494-4240d38030a4" ServerVersion="24.10">
+                      <uc:CVCache.CvAnchorRelations>
+                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                          <uc:AnchorRelationInfo IsTargetText="False" Target="1">
+                            <uc:AnchorRelationInfo.Anchors>
+                              <x:Array Type="x:Int32">
+                                <x:Int32>13</x:Int32>
+                                <x:Int32>14</x:Int32>
+                              </x:Array>
+                            </uc:AnchorRelationInfo.Anchors>
+                          </uc:AnchorRelationInfo>
+                          <uc:AnchorRelationInfo IsTargetText="False" Target="4">
+                            <uc:AnchorRelationInfo.Anchors>
+                              <x:Array Type="x:Int32">
+                                <x:Int32>22</x:Int32>
+                                <x:Int32>23</x:Int32>
+                              </x:Array>
+                            </uc:AnchorRelationInfo.Anchors>
+                          </uc:AnchorRelationInfo>
+                          <uc:AnchorRelationInfo IsTargetText="False" Target="0">
+                            <uc:AnchorRelationInfo.Anchors>
+                              <x:Array Type="x:Int32">
+                                <x:Int32>11</x:Int32>
+                                <x:Int32>12</x:Int32>
+                              </x:Array>
+                            </uc:AnchorRelationInfo.Anchors>
+                          </uc:AnchorRelationInfo>
+                        </scg:List>
+                      </uc:CVCache.CvAnchorRelations>
+                      <uc:CVCache.CvUiElements>
+                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="323, 121, 246, 47" />
+                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="590, 121, 244, 48" />
+                          <uc:CvElementInfo Category="Button" Description="Button" Region="325, 452, 158, 42" />
+                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="804, 314, 21, 18" />
+                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="324, 210, 510, 46" />
+                          <uc:CvElementInfo Category="CloseButton" Description="CloseButton" Region="832, 12, 28, 28" />
+                          <uc:CvElementInfo Category="Button" Description="Button" Region="32, 149, 75, 45" />
+                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="562, 380, 35, 28" />
+                          <uc:CvElementInfo Category="Icon" Description="check mark icon" Region="339, 385, 32, 32" />
+                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="329, 369, 278, 64" />
+                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="330, 369, 276, 64" />
+                          <uc:CvElementInfo Description="{x:Null}" Category="RadioButton" Confidence="Runtime" Region="340, 386, 30, 30" />
+                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="28, 38, 56, 42" />
+                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="32, 147, 75, 48" />
+                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="324, 300, 510, 47" />
+                          <uc:CvElementInfo Description="{x:Null}" Category="ArrowButton" Confidence="Runtime" Region="800, 309, 28, 28" />
+                        </scg:List>
+                      </uc:CVCache.CvUiElements>
+                      <uc:CVCache.OcrTexts>
+                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="35">
+                          <uc:OcrTextInfo Region="836, 14, 22, 22" Text="X" />
+                          <uc:OcrTextInfo Region="32, 42, 48, 28" Text="Log" />
+                          <uc:OcrTextInfo Region="82, 40, 30, 22" Text="In" />
+                          <uc:OcrTextInfo Region="324, 40, 84, 24" Text="Create" />
+                          <uc:OcrTextInfo Region="408, 40, 62, 24" Text="Your" />
+                          <uc:OcrTextInfo Region="470, 40, 106, 24" Text="Account" />
+                          <uc:OcrTextInfo Region="34, 100, 26, 16" Text="Sign" />
+                          <uc:OcrTextInfo Region="62, 100, 12, 14" Text="in" />
+                          <uc:OcrTextInfo Region="74, 100, 14, 14" Text="to" />
+                          <uc:OcrTextInfo Region="90, 100, 44, 14" Text="Access" />
+                          <uc:OcrTextInfo Region="136, 100, 50, 14" Text="Rewards" />
+                          <uc:OcrTextInfo Region="324, 100, 28, 14" Text="First" />
+                          <uc:OcrTextInfo Region="354, 100, 36, 14" Text="Name" />
+                          <uc:OcrTextInfo Region="590, 100, 26, 14" Text="Last" />
+                          <uc:OcrTextInfo Region="618, 100, 36, 14" Text="Name" />
+                          <uc:OcrTextInfo Region="336, 138, 36, 14" Text="Enter" />
+                          <uc:OcrTextInfo Region="372, 140, 10, 12" Text="a" />
+                          <uc:OcrTextInfo Region="384, 140, 38, 12" Text="name" />
+                          <uc:OcrTextInfo Region="602, 138, 36, 14" Text="Enter" />
+                          <uc:OcrTextInfo Region="638, 140, 10, 12" Text="a" />
+                          <uc:OcrTextInfo Region="650, 140, 36, 12" Text="name" />
+                          <uc:OcrTextInfo Region="50, 164, 38, 18" Text="Login" />
+                          <uc:OcrTextInfo Region="324, 188, 34, 14" Text="Email" />
+                          <uc:OcrTextInfo Region="358, 188, 50, 14" Text="Address" />
+                          <uc:OcrTextInfo Region="334, 226, 186, 18" Text="trupti.bhosale@yopmail.com" />
+                          <uc:OcrTextInfo Region="324, 278, 58, 14" Text="Password" />
+                          <uc:OcrTextInfo Region="810, 318, 8, 10" Text="O" />
+                          <uc:OcrTextInfo Region="372, 394, 48, 12" Text="Success!" />
+                          <uc:OcrTextInfo Region="528, 398, 38, 10" Text="CLOUDI" />
+                          <uc:OcrTextInfo Region="566, 398, 30, 10" Text="FLARE" />
+                          <uc:OcrTextInfo Region="548, 410, 24, 10" Text="Priyasy" />
+                          <uc:OcrTextInfo Region="578, 410, 18, 10" Text="Helo" />
+                          <uc:OcrTextInfo Region="338, 466, 46, 14" Text="Create" />
+                          <uc:OcrTextInfo Region="384, 466, 36, 14" Text="Your" />
+                          <uc:OcrTextInfo Region="420, 466, 46, 14" Text="Profile" />
+                        </scg:List>
+                      </uc:CVCache.OcrTexts>
+                    </uc:CVCache>
+                  </scg:List>
+                </uc:CvCacheContainer.Caches>
+              </uc:CvCacheContainer>
+            </p:CVScope.DesignTimeCacheContainer>
+            <p:CVScope.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+                <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseAccents="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" UseSeparateOcrProcess="True" />
+              </ActivityFunc>
+            </p:CVScope.OCREngine>
+            <p:CVScope.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="16b96b23-4dff-4905-bddb-4d1286a2a4b1" InformativeScreenshot="e93f7e36b8cbb9a4ba29895bb5601305" Selector="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' parentid='__nuxt' tag='DIV' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </p:CVScope.Target>
+            <p:CVScope.UseLocalServer>
+              <InArgument x:TypeArguments="x:Boolean" />
+            </p:CVScope.UseLocalServer>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:CvClickWithDescriptor DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="8" DelayMS="5" Descriptor="[&quot;Target: Button (325,452,158,42)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Create Your Profile' (338,466,128,14)&quot;]" DesignTimeCacheId="f53e51ad-7d82-42f5-97e7-0caf0ef63cc6" DesignTimeScaleFactor="1.5" DisplayName="CV Click - 'Button'" sap:VirtualizedContainerService.HintSize="400,219" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="2ac7a128f3d63b9f34743abd839057db" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" TimeoutMS="5" Version="V6">
-              <p:CvClickWithDescriptor.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </p:CvClickWithDescriptor.CursorPosition>
-              <p:CvClickWithDescriptor.DesignTimeDescriptor>
-                <uc:CvDescriptor Id="1b45d00a-d9b2-4bdc-9dba-352f249cd8fb">
-                  <uc:CvDescriptor.Anchors>
-                    <x:Array Type="uc:CvElementDescriptor">
-                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="338, 466, 128, 14" ElementType="Text" Text="Create Your Profile" />
-                    </x:Array>
-                  </uc:CvDescriptor.Anchors>
-                  <uc:CvDescriptor.Target>
-                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="325, 452, 158, 42" ElementType="Button" />
-                  </uc:CvDescriptor.Target>
-                </uc:CvDescriptor>
-              </p:CvClickWithDescriptor.DesignTimeDescriptor>
-              <p:CvClickWithDescriptor.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c93c5a26-6bc4-4429-980b-ff74919e1ed4">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </p:CvClickWithDescriptor.Target>
-            </p:CvClickWithDescriptor>
-            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="400,48" sap2010:WorkflowViewState.IdRef="StepStatus_2" ReportId="[reportId]" Status="Pass" StepName="Account created successfully" TakeScreenshot="True" TestId="[testId]">
-              <ra:StepStatus.StepDescription>
-                <InArgument x:TypeArguments="x:String">
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </InArgument>
-              </ra:StepStatus.StepDescription>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ra:StepStatus>
-          </Sequence>
-        </ActivityAction>
-      </p:CVScope.Body>
-      <p:CVScope.DesignTimeCache>
-        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
-      </p:CVScope.DesignTimeCache>
-      <p:CVScope.DesignTimeCacheContainer>
-        <uc:CvCacheContainer>
-          <uc:CvCacheContainer.Caches>
-            <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-              <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Create Your (Main)" Id="f53e51ad-7d82-42f5-97e7-0caf0ef63cc6" InformativeScreenshot="ed5fd1a51227d296c32f35a3ec0968ec" LogicalPosition="1920, 87" OcrText="X Log In Create Your Account Sign in to Access Rewards First Name Last Name Enter a name Enter a name Login Email Address trupti.bhosale@yopmail.com Password O Success! CLOUDI FLARE Priyasy Helo Create Your Profile" Position="1920, 87" ScaleFactor="1.5" ScreenshotGuid="b79d4be4-c878-4c53-9494-4240d38030a4" ServerVersion="24.10">
-                <uc:CVCache.CvAnchorRelations>
-                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
-                    <uc:AnchorRelationInfo IsTargetText="False" Target="1">
-                      <uc:AnchorRelationInfo.Anchors>
-                        <x:Array Type="x:Int32">
-                          <x:Int32>13</x:Int32>
-                          <x:Int32>14</x:Int32>
-                        </x:Array>
-                      </uc:AnchorRelationInfo.Anchors>
-                    </uc:AnchorRelationInfo>
-                    <uc:AnchorRelationInfo IsTargetText="False" Target="4">
-                      <uc:AnchorRelationInfo.Anchors>
-                        <x:Array Type="x:Int32">
-                          <x:Int32>22</x:Int32>
-                          <x:Int32>23</x:Int32>
-                        </x:Array>
-                      </uc:AnchorRelationInfo.Anchors>
-                    </uc:AnchorRelationInfo>
-                    <uc:AnchorRelationInfo IsTargetText="False" Target="0">
-                      <uc:AnchorRelationInfo.Anchors>
-                        <x:Array Type="x:Int32">
-                          <x:Int32>11</x:Int32>
-                          <x:Int32>12</x:Int32>
-                        </x:Array>
-                      </uc:AnchorRelationInfo.Anchors>
-                    </uc:AnchorRelationInfo>
-                  </scg:List>
-                </uc:CVCache.CvAnchorRelations>
-                <uc:CVCache.CvUiElements>
-                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
-                    <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="323, 121, 246, 47" />
-                    <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="590, 121, 244, 48" />
-                    <uc:CvElementInfo Category="Button" Description="Button" Region="325, 452, 158, 42" />
-                    <uc:CvElementInfo Category="Icon" Description="Icon" Region="804, 314, 21, 18" />
-                    <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="324, 210, 510, 46" />
-                    <uc:CvElementInfo Category="CloseButton" Description="CloseButton" Region="832, 12, 28, 28" />
-                    <uc:CvElementInfo Category="Button" Description="Button" Region="32, 149, 75, 45" />
-                    <uc:CvElementInfo Category="Icon" Description="Icon" Region="562, 380, 35, 28" />
-                    <uc:CvElementInfo Category="Icon" Description="check mark icon" Region="339, 385, 32, 32" />
-                    <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="329, 369, 278, 64" />
-                    <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="330, 369, 276, 64" />
-                    <uc:CvElementInfo Description="{x:Null}" Category="RadioButton" Confidence="Runtime" Region="340, 386, 30, 30" />
-                    <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="28, 38, 56, 42" />
-                    <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="32, 147, 75, 48" />
-                    <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="324, 300, 510, 47" />
-                    <uc:CvElementInfo Description="{x:Null}" Category="ArrowButton" Confidence="Runtime" Region="800, 309, 28, 28" />
-                  </scg:List>
-                </uc:CVCache.CvUiElements>
-                <uc:CVCache.OcrTexts>
-                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="35">
-                    <uc:OcrTextInfo Region="836, 14, 22, 22" Text="X" />
-                    <uc:OcrTextInfo Region="32, 42, 48, 28" Text="Log" />
-                    <uc:OcrTextInfo Region="82, 40, 30, 22" Text="In" />
-                    <uc:OcrTextInfo Region="324, 40, 84, 24" Text="Create" />
-                    <uc:OcrTextInfo Region="408, 40, 62, 24" Text="Your" />
-                    <uc:OcrTextInfo Region="470, 40, 106, 24" Text="Account" />
-                    <uc:OcrTextInfo Region="34, 100, 26, 16" Text="Sign" />
-                    <uc:OcrTextInfo Region="62, 100, 12, 14" Text="in" />
-                    <uc:OcrTextInfo Region="74, 100, 14, 14" Text="to" />
-                    <uc:OcrTextInfo Region="90, 100, 44, 14" Text="Access" />
-                    <uc:OcrTextInfo Region="136, 100, 50, 14" Text="Rewards" />
-                    <uc:OcrTextInfo Region="324, 100, 28, 14" Text="First" />
-                    <uc:OcrTextInfo Region="354, 100, 36, 14" Text="Name" />
-                    <uc:OcrTextInfo Region="590, 100, 26, 14" Text="Last" />
-                    <uc:OcrTextInfo Region="618, 100, 36, 14" Text="Name" />
-                    <uc:OcrTextInfo Region="336, 138, 36, 14" Text="Enter" />
-                    <uc:OcrTextInfo Region="372, 140, 10, 12" Text="a" />
-                    <uc:OcrTextInfo Region="384, 140, 38, 12" Text="name" />
-                    <uc:OcrTextInfo Region="602, 138, 36, 14" Text="Enter" />
-                    <uc:OcrTextInfo Region="638, 140, 10, 12" Text="a" />
-                    <uc:OcrTextInfo Region="650, 140, 36, 12" Text="name" />
-                    <uc:OcrTextInfo Region="50, 164, 38, 18" Text="Login" />
-                    <uc:OcrTextInfo Region="324, 188, 34, 14" Text="Email" />
-                    <uc:OcrTextInfo Region="358, 188, 50, 14" Text="Address" />
-                    <uc:OcrTextInfo Region="334, 226, 186, 18" Text="trupti.bhosale@yopmail.com" />
-                    <uc:OcrTextInfo Region="324, 278, 58, 14" Text="Password" />
-                    <uc:OcrTextInfo Region="810, 318, 8, 10" Text="O" />
-                    <uc:OcrTextInfo Region="372, 394, 48, 12" Text="Success!" />
-                    <uc:OcrTextInfo Region="528, 398, 38, 10" Text="CLOUDI" />
-                    <uc:OcrTextInfo Region="566, 398, 30, 10" Text="FLARE" />
-                    <uc:OcrTextInfo Region="548, 410, 24, 10" Text="Priyasy" />
-                    <uc:OcrTextInfo Region="578, 410, 18, 10" Text="Helo" />
-                    <uc:OcrTextInfo Region="338, 466, 46, 14" Text="Create" />
-                    <uc:OcrTextInfo Region="384, 466, 36, 14" Text="Your" />
-                    <uc:OcrTextInfo Region="420, 466, 46, 14" Text="Profile" />
-                  </scg:List>
-                </uc:CVCache.OcrTexts>
-              </uc:CVCache>
-            </scg:List>
-          </uc:CvCacheContainer.Caches>
-        </uc:CvCacheContainer>
-      </p:CVScope.DesignTimeCacheContainer>
-      <p:CVScope.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
-          <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
-          </ActivityFunc.Argument>
-          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseAccents="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" UseSeparateOcrProcess="True" />
-        </ActivityFunc>
-      </p:CVScope.OCREngine>
-      <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="16b96b23-4dff-4905-bddb-4d1286a2a4b1" InformativeScreenshot="e93f7e36b8cbb9a4ba29895bb5601305" Selector="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' parentid='__nuxt' tag='DIV' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </p:CVScope.Target>
-      <p:CVScope.UseLocalServer>
-        <InArgument x:TypeArguments="x:Boolean" />
-      </p:CVScope.UseLocalServer>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </p:CVScope>
+          </p:CVScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="504,330" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Logout - Invoke Workflow File (Test Cases\Logout.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Test Cases\Logout.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:Int32" x:Key="reportId">[reportId]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="suiteId">[suiteId]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

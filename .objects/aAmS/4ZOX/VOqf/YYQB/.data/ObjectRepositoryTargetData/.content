@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JP-_VFBeTkiWYs7eNr1B1g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="back40-staging.farmstore-modern.us/orders/mission-control" DesignTimeRectangle="122, 219, 22, 21" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;app-content-layout&amp;gt;div&amp;gt;mat-sidenav-container&amp;gt;mat-sidenav-content&amp;gt;app-orders&amp;gt;app-base-sidebar&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-sidebar-search&amp;gt;mat-form-field&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;app-fa-icon&amp;gt;i' tag='I' /&gt;" Guid="c32e1419-3668-4589-ad9f-6d7c9bbabe2b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Back40' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="58f215363663c5f3627e987ad201dc17.jpg" xmlns="">0r9njvVlNdkypHbsLHgYjmA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

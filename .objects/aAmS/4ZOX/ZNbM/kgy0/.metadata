@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Billing Address_State",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "kgy018esWUiYSbZYxOv7kg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/kgy018esWUiYSbZYxOv7kg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T11:21:48.8991836Z",
+  "Updated": "2026-06-08T11:21:48.8991836Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

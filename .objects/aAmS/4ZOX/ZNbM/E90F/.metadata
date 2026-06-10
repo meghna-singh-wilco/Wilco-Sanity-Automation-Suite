@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Billing_Street Address",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "E90FrMIvdk6ZW1Ybuf2nAA",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/E90FrMIvdk6ZW1Ybuf2nAA",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T11:21:57.5991972Z",
+  "Updated": "2026-06-08T11:21:57.5991972Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

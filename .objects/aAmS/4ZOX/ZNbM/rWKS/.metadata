@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Remove Cart Button",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "rWKSvuAE_Em3hpX7weOFNA",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/rWKSvuAE_Em3hpX7weOFNA",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-05T10:06:46.710997Z",
+  "Updated": "2026-06-05T10:06:46.710997Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

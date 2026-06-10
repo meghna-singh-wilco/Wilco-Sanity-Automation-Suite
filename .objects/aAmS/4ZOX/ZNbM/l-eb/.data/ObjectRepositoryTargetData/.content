@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="zq_sa2qHk0ymDdc230H3OQ" Reference="9dHQDpKOSEKlUU6D1TIPyQ/l-eb1aptakyT5YeX1GMMvw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us" DesignTimeRectangle="1491, 244, 21, 24" ElementType="Icon" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='svg-inline--fa fa-user text-lg group-hover:text-primary-700' tag='svg' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f116a614-25c5-4201-9005-e2382941e101" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1678, 246, 19, 19" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' tag='svg' /&gt;" Guid="cb46f009-a248-41f0-afd0-4b0566556b4b" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="856c8be318087a4c7ed82ce0e6ed0cc8.jpg" xmlns="">0JTrJz2sShEmK8-OtM2U2OA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

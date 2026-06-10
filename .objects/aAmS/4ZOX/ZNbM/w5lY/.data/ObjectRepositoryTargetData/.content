@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="-4WRmMtvC02sFIIijkmHmA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/shop-all" DesignTimeRectangle="495, 387, 1231, 810" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='3' tag='DIV' /&gt;" Guid="70423bbe-7f03-495b-9be4-03dc7ef8c671" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Products | Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+      <imageRef attrName="InformativeScreenshot" originalValue="bcc9550353cc8e831009bae5e73c5a62.jpg" xmlns="">0QcF4pDoai065qDR_JxBfag</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

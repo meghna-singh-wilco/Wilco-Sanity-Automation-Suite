@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dL_3zsF9eE-_QWL_wq2Ijw" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/NORacCUhgku4VvEhahtwwA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="dev-kkgsbvqd60usiwkk.us.auth0.com/u/login" DesignTimeRectangle="721, 584, 412, 78" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='input cb91b73c7 c77d8fc90' aaname='                             Password                                                        *                           ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' fuzzylevel:aaname='0.0' /&gt;" Guid="ac0db58a-95ef-4b37-8e2e-722aca754306" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in | back40' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="734, 569, 119, 24" ElementType="Text" Guid="524e633e-e6b3-4c99-ad51-baf6aec43c0a" SearchSteps="FuzzySelector">
+            <Target.FuzzySelectorArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:Literal x:TypeArguments="x:String" xml:space="preserve">&lt;webctrl id='password-label' tag='LABEL' type='' class='c6875e265 cc134ffa5 cb8a397fb' aaname='                             Password                                                                                   ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Password *' /&gt;</p:Literal>
+              </p:InArgument>
+            </Target.FuzzySelectorArgument>
+          </Target>
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6c1becd05765e0b47caea9d1847cc518.jpg" xmlns="">6c1becd05765e0b47caea9d1847cc518.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

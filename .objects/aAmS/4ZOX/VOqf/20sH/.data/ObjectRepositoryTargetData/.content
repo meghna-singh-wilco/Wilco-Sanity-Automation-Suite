@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ga8eluMYP0KF7IvFX4KGbA" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/LARp20Bn6EixX83nrevXHA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="back40-admin.farmstore-modern.us/orders/339964" DesignTimeRectangle="290, 295, 105, 29" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname=' Processing ' parentid='ng-app' tag='SPAN' /&gt;" Guid="bac9bea3-c339-4aba-807a-854d93a0dc7f" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mission Control' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2a5b8d8d1e45a6a709c1c80b8a2ac5f5.jpg" xmlns="">2a5b8d8d1e45a6a709c1c80b8a2ac5f5.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

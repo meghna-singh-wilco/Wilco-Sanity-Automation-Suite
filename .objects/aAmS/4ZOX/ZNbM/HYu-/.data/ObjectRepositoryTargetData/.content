@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="GH1TIURlPkKgcp_Nu6sEGg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/GKm5nOYMwUqnlQNdLUbF6Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/product/pet/dog-food/dry-adult-dog-food/natural-balance-fish-sweet-potato-236" DesignTimeRectangle="1253, 831, 220, 26" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Add to cart' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add to cart' /&gt;" Guid="3dd836a0-59c3-4ff8-8bbc-91f3c988ee0c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Natural Balance, Fish &amp;amp; Sweet Potato | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="1231, 813, 264, 63" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Add to cart' tag='BUTTON' type='button' class='w-1/2 md:w-1/2 md:mr-3 relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Add to cart' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Add to cart' /&gt;" Guid="b17b434f-f757-4456-811d-eefcea6dd83e" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="5c6d27a4b3ea041d111e12ba4f0eaf20.jpg" xmlns="">5c6d27a4b3ea041d111e12ba4f0eaf20.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="oJq2B6RT1EiI-LIL8ZItWw" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/ayEDZra2D02kqQYnZ4J9jA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-adult-dog-food" DesignTimeRectangle="1430, 242, 27, 27" DesignTimeScaleFactor="1.3499999046325684" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg' tag='svg' /&gt;" Guid="f93bf60e-4bdb-4e2c-853f-9e4e53d3584a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dog Food &amp;amp; Dry Adult Dog Food | Wilco' /&gt;" SearchSteps="Selector" Version="V6">
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="7fa5ba5056ddf37205216f9eba075b75.jpg" xmlns="">7fa5ba5056ddf37205216f9eba075b75.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

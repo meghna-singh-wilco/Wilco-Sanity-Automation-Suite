@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="CdsyRI0zg02Azm9wlnXaSQ" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/qNmxWyfxfUWTI3DeJcbsYg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/shop-all" DesignTimeRectangle="553, 686, 221, 66" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Natural Balance, Fish &amp;amp; Sweet Potato' parentid='__nuxt' tag='SPAN' /&gt;" Guid="a47b04f7-aa8c-425c-8c68-463ccca95323" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Products | Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+      <TargetAnchorable.WaitForReadyArgument>
+        <p:InArgument x:TypeArguments="NWaitForReady">
+          <p:Literal x:TypeArguments="NWaitForReady" Value="Interactive" />
+        </p:InArgument>
+      </TargetAnchorable.WaitForReadyArgument>
+      <imageRef attrName="InformativeScreenshot" originalValue="449bf1e830de7390209d566b7a635f7b.jpg" xmlns="">449bf1e830de7390209d566b7a635f7b.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

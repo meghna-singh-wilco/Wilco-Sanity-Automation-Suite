@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Log in  back40",
+  "Type": "Screen",
+  "Id": "VOqfoVF2pUuhnxQ-LDdzWw",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/VOqfoVF2pUuhnxQ-LDdzWw",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/4ZOXkI0BhkWq8H_4-TFz4Q",
+  "Created": "2026-06-10T07:31:49.5152112Z",
+  "Updated": "2026-06-10T07:31:49.5152112Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

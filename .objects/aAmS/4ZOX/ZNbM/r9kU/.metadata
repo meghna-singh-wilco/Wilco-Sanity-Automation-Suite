@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Go to my cart & checkout",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "r9kUsL7qo0WIe32uKLkWmQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/r9kUsL7qo0WIe32uKLkWmQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-05T10:03:59.704356Z",
+  "Updated": "2026-06-05T10:03:59.704356Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

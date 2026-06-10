@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="T8LbUj8AhUSLfATHiqJpmg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/cZ0vXURWKE2I_Nyz5FhBRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="dev-kkgsbvqd60usiwkk.us.auth0.com/u/login" DesignTimeRectangle="720, 612, 480, 78" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='input cb91b73c7 c80d1ce6e' aaname='                               Email address                                                            *                             ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' fuzzylevel:aaname='0.0' /&gt;" Guid="2579c146-c5cd-46e2-aeb1-bf405e875f80" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in | back40' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="733, 597, 160, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='username-label' tag='LABEL' type='' class='c6875e265 cc134ffa5 c002d3a33' aaname='                               Email address                                                                                         ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Email address *' /&gt;" Guid="771a491c-32c3-40d7-98a1-0a882c8f6e6b" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c4144aa4f49f431d15a559a97687a9f4.jpg" xmlns="">c4144aa4f49f431d15a559a97687a9f4.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

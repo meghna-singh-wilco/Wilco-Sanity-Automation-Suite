@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="x4zlfFcVIUCnMJgmuuw0Xg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/oJSU4IzwQEW2fihUvGtjZw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/checkout" DesignTimeRectangle="289, 400, 115, 34" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='font-[700]' tag='P' type='' aaname='Credit Card' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Credit Card' /&gt;" Guid="e555e623-23e0-4c1b-8f18-729e7a2aec14" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Checkout | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="69, 376, 555, 102" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Credit Card' tag='BUTTON' type='' class='h-[76px] w-full flex justify-center items-center relative overflow-hidden border-2 rounded border-accent-400 bg-white disabled:bg-transparent disabled:border disabled:border-accent-400 disabled:opacity-50' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Credit Card' /&gt;" Guid="50d5fcfb-af6f-41c0-bee7-15219e30195b" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="10a7a0de04e95fef402590c381c590f6.jpg" xmlns="">10a7a0de04e95fef402590c381c590f6.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

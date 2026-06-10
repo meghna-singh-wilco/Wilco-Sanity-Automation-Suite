@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="n0_Igb4giU2GOABxRwnBMQ" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/dCq-guy6lU-5MAQIkdKtGA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/product/pet/dog-food/dry-adult-dog-food/natural-balance-fish-sweet-potato-236" DesignTimeRectangle="1324, 591, 145, 38" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Ship to Home' tag='SPAN' type='' class='font-bold lg:text-xl' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Ship to Home' /&gt;" Guid="5585f4d0-a7a6-4c75-8315-ad27d9600308" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Natural Balance, Fish &amp;amp; Sweet Potato | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="1294, 522, 242, 216" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Ship to Home' tag='BUTTON' type='' class='flex flex-col h-[120px] w-[180px] p-3 sm:h-[160px] rounded-[10px] border relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2 focus-visible:ring-offset-accent-100 sm:p-5 bg-white border-[3px] border-primary-700 mr-3' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Ship to Home' /&gt;" Guid="4681b26f-1996-4d57-906e-62201d56f96a" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="ba638d59c1ccd04a4aaf6c46abae8438.jpg" xmlns="">ba638d59c1ccd04a4aaf6c46abae8438.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

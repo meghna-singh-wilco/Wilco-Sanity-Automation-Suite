@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="HcUrKFAhkECy8BX11DIQmQ" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/cXyh0Sw4SEqJTr43EOPcig" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/checkout" DesignTimeRectangle="91, 855, 1082, 26" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Save &amp;amp; Continue' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Save &amp;amp; Continue' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Save &amp;amp; Continue' /&gt;" Guid="f5d49dfc-0568-4b9f-a0ae-79647758a67b" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Checkout | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="69, 838, 1127, 60" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Save &amp;amp; Continue' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Save &amp;amp; Continue' tag='BUTTON' type='button' class='w-full relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Save &amp;amp; Continue' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Save &amp;amp; Continue' /&gt;" Guid="45160a70-a575-4b12-a425-6a98d03cd547" ImageBase64="" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Use Selected Address",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "JlV_rcK9DUGnS4KbPTk0Eg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/JlV_rcK9DUGnS4KbPTk0Eg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T11:36:20.616623Z",
+  "Updated": "2026-06-08T11:36:20.616623Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

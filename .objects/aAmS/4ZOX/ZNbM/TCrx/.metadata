@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Departments",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "TCrxoIb1_0iT8MA69rfJVg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/TCrxoIb1_0iT8MA69rfJVg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T10:30:19.0020321Z",
+  "Updated": "2026-06-08T10:30:19.0020321Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Ship to Home radio button",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "zoRa2QsVrkKH7ooJx3HzlQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/zoRa2QsVrkKH7ooJx3HzlQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-08T13:21:12.3994731Z",
+  "Updated": "2026-06-08T13:21:12.3994731Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

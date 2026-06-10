@@ -1,5 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Add_to_Cart_product_from_PLP" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_to_Cart_product_from_PLP" this:Add_to_Cart_product_from_PLP.reportId="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="isButtonEnabled" Type="OutArgument(x:Boolean)" />
     <x:Property Name="reportId" Type="InArgument(x:Int32)" />
     <x:Property Name="suiteId" Type="InArgument(x:String)" />
   </x:Members>
@@ -47,6 +48,9 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,73 +104,671 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_to_Cart_product_from_PLP" sap:VirtualizedContainerService.HintSize="1482,2239" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Add_to_Cart_product_from_PLP" sap:VirtualizedContainerService.HintSize="1223,1351" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="testId" />
+      <Variable x:TypeArguments="x:String" Name="Email">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">trupti.bhosale@yopmail.com</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="password">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Testing@123</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="StartSuite_1" ReportId="[reportId]" SuiteName="Add to Cart from PLP Suite" suiteId="[SuiteId]" />
-    <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="StartTest_1" Priority="Low" ReportId="[reportId]" SuiteId="[suiteId]" TagName="Login" TestName="Add to Cart from PLP Test" testId="[testId]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Login - Invoke Workflow File (Test Cases\Login.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Test Cases\Login.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="suiteId">[suiteId]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="reportId">[reportId]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome: Shop Home, Backyard, Pet, Farm &amp; Rura" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1803" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V2">
+    <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="StartSuite_1" ReportId="[reportId]" SuiteName="Add to Cart from PLP Suite" suiteId="[SuiteId]" />
+    <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="StartTest_1" Priority="Low" ReportId="[reportId]" SuiteId="[suiteId]" TagName="Login" TestName="Add to Cart from PLP Test" testId="[testId]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Login - Invoke Workflow File (Test Cases\Login.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Test Cases\Login.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="suiteId">[suiteId]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="reportId">[reportId]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Shop Home, Backyard, Pet, Farm &amp; Rural" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1157" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1609" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,963" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Departments'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="r-zy6TS1mE-rwlSQFDY9Rw" DesignTimeRectangle="428, 232, 135, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Departments' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Departments' /&gt;" Guid="42f62db9-8606-4c08-b8e9-3640637bbc36" InformativeScreenshot="1ef7868372d62a3cdfc41dc6513f665a.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/IiPE1k0CDEWux5Kj3DgunA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <uix:NCheckState DisplayName="Check App State 'Login/Register'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Timeout="30" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,579" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="StepStatus_2" ReportId="[reportId]" Status="Pass" StepName="Login Button Appeared" TakeScreenshot="True" TestId="[testId]">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="3" DisplayName="Click 'LoginRegister'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Timeout="3" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="9SprmxZpCkKeqPvTCeN7QA" DesignTimeRectangle="1479, 230, 117, 13" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login/Register' type='' tag='SPAN' class='hidden md:flex' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="79b4d6b0-28f4-4ca2-bc4a-e9f1f36d6c93" InformativeScreenshot="c42bcf060ccf2ef22e4406935093b954.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/ByTSubB4FkeboZ5qmGinOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="1452, 221, 150, 31" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Login/RegisterLogin' type='' tag='BUTTON' class='flex flex-col md:flex-row md:gap-2 items-center text-gray text-[18px] group md:h-[28px] md:w-[133px]' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="bc2f0c52-c499-4d70-b6f5-ae17939ad2cd" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_3" ReportId="[reportId]" Status="Pass" StepName="User clicked on Login Register" TakeScreenshot="True" TestId="[testId]">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_4" ReportId="[reportId]" Status="Fail" StepDescription="User not able to click on login button" StepName="User not able to Login" TakeScreenshot="True" TestId="[testId]" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="tUd7yKNTXESkYFdbyA50Cw" DesignTimeRectangle="1519, 344, 157, 18" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login/Register' type='' tag='SPAN' class='hidden md:flex' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="e97e98f5-3918-46c2-8a64-0ee0e999585a" InformativeScreenshot="21e1b449d58d4c3b5e13ced7093da5f2.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/MityImcLb0Wg-gqWqHFErQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1483, 332, 200, 42" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Login/RegisterLogin' type='' tag='BUTTON' class='flex flex-col md:flex-row md:gap-2 items-center text-gray text-[18px] group md:h-[28px] md:w-[133px]' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login/Register' /&gt;" Guid="32a4f901-b845-4b6e-acfd-51cc41e57088" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <uix:NCheckState DisplayName="Check App State 'Email Address'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,464" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="ui:UiElement" Name="outputElement" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="False" DelayAfter="3" DelayBefore="1" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" OutUiElement="[outputElement]" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Text="[Email]" Timeout="5" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="MQmvGmHMXk2ojyK1b_8xcw" DesignTimeRectangle="448, 401, 636, 56" DesignTimeScaleFactor="1.125" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='email' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter an email' aaname='Email Address' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2fc78596-fd57-444b-b495-2eac40ca205a" InformativeScreenshot="4b24b0fe02366a347eb58a7851a31c91.jpg" IsResponsive="True" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/cimBYOILqk-kCUa7OCrGDw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="448, 368, 636, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-bold block mb-1' aaname='Email Address' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Email Address' /&gt;" Guid="3459291d-f231-4237-af96-89b9de98e02d" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_5" ReportId="[reportId]" Status="Pass" StepName="Email entered successfully" TakeScreenshot="True" TestId="[testId]">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_6" ReportId="[reportId]" Status="Fail" StepName="User not able to enter Email" TakeScreenshot="True" TestId="[testId]">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="y5t-hWVbk0KtJ954nA0TNw" DesignTimeRectangle="282, 572, 847, 75" DesignTimeScaleFactor="1.5" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' type='email' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter an email' aaname='Email Address' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b06008e1-bf93-4a6c-b573-be1f6a8562ab" InformativeScreenshot="3f5984306c211f6f7c1c126b5c2aa9a1.jpg" IsResponsive="True" Reference="9dHQDpKOSEKlUU6D1TIPyQ/Pm4_WenLvEGHHuaHHqCVFQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="282, 528, 847, 38" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-bold block mb-1' aaname='Email Address' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Email Address' /&gt;" Guid="dfb9996c-e9b5-4c25-bbef-8aeeed7feffa" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <uix:NCheckState DisplayName="Check App State 'Password'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,464" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="5" DisplayName="Type Into 'password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Text="[password]" Timeout="5" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="fwRzaorduUmW4rF-jc7aEg" DesignTimeRectangle="448, 513, 636, 56" DesignTimeScaleFactor="1.125" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a password' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="609cdcb4-b71d-4178-91d6-b8bd348bfafd" InformativeScreenshot="5425881bef8ec99d51ee273f549fb883.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/fokh4EjopEG_bDgbwDvNOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="448, 480, 636, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password' /&gt;" Guid="0f97fb98-2d36-4de9-9ab3-77d424de09be" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_7" ReportId="[reportId]" Status="Pass" StepName="Password entered successfully" TakeScreenshot="True" TestId="[testId]">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" ReportId="{x:Null}" TestId="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_8" Status="Compare" StepName="User not able to enter password" TakeScreenshot="True">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="MEJ9RwmeLEWxk3Tw5D_csg" DesignTimeRectangle="282, 721, 847, 75" DesignTimeScaleFactor="1.5" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='w-full h-[50px] py-2 pr-3 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none pl-3 font-sans leading-none m-0 p-3 rounded-md text-surface-600 dark:text-surface-200 placeholder:text-surface-400 dark:placeholder:text-surface-500 bg-surface-0 dark:bg-surface-900 border border-accent-700 dark:border-surface-600 hover:border-primary-500 dark:hover:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-500/50 dark:focus:ring-primary-400/50 appearance-none transition-colors duration-200' placeholder='Enter a password' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="7a3108e2-8f0b-4b00-bd71-644459462aa9" InformativeScreenshot="c7fa1f08e82753ea63ff26e6ee8cab6a.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/Nd0mOOxJbUyLInPS_qeZGA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="282, 677, 847, 38" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='font-bold block mb-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password' /&gt;" Guid="b91e5396-d790-4f70-be21-c0a187432f2e" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <uix:NCheckState DisplayName="Check App State 'Login'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,963" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Login'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[isButtonEnabled]" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                          <uix:NCheckElement.Target>
+                            <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="HAGu4yRzAUy9n7s8IRL6Mw" DesignTimeRectangle="307, 918, 62, 28" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login' type='' tag='SPAN' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login' /&gt;" Guid="67d74457-1cb6-4a8e-bb12-8930bed8fee6" InformativeScreenshot="e5222242b4a2cae3704c086b6d92c729.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/JvPGxfmx20myYDirlPD3_A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="282, 899, 112, 66" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Login' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Login' /&gt;" Guid="3e232342-0194-428a-8ba8-034d939872a7" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckElement.Target>
+                        </uix:NCheckElement>
+                        <If Condition="[isButtonEnabled = True]" sap:VirtualizedContainerService.HintSize="452,760" sap2010:WorkflowViewState.IdRef="If_1">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="farmstore-modern.us" ContentHash="02DSpsByN06swm4df7E6Hg" DesignTimeRectangle="467, 660, 47, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login' type='' tag='SPAN' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login' /&gt;" Guid="5671c214-ef52-440e-893f-9e6cbd9e21de" InformativeScreenshot="c890ded9fe620e09a757b5b917040c3d.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/r0jEeGmoxk-QliqHED0KjQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="448, 646, 85, 51" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Login' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Login' /&gt;" Guid="00311bb1-04ba-48c4-aa78-41c24a8d2273" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_9" ReportId="[reportId]" Status="Pass" StepName="User clicked on Login" TakeScreenshot="True" TestId="[testId]">
+                                <ra:StepStatus.StepDescription>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <Literal x:TypeArguments="x:String" Value="" />
+                                  </InArgument>
+                                </ra:StepStatus.StepDescription>
+                              </ra:StepStatus>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_10" ReportId="[reportId]" Status="Fail" StepName="Login button is disabled" TakeScreenshot="True" TestId="[testId]">
+                                <ra:StepStatus.StepDescription>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <Literal x:TypeArguments="x:String" Value="" />
+                                  </InArgument>
+                                </ra:StepStatus.StepDescription>
+                              </ra:StepStatus>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,218" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" ReportId="{x:Null}" TestId="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_11" Status="Compare" StepName="User not able to Login" TakeScreenshot="True">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="HAGu4yRzAUy9n7s8IRL6Mw" DesignTimeRectangle="307, 918, 62, 28" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Login' type='' tag='SPAN' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Login' /&gt;" Guid="67d74457-1cb6-4a8e-bb12-8930bed8fee6" InformativeScreenshot="e5222242b4a2cae3704c086b6d92c729.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/JvPGxfmx20myYDirlPD3_A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="282, 899, 112, 66" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Login' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Login' /&gt;" Guid="3e232342-0194-428a-8ba8-034d939872a7" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                  <uix:NCheckState DisplayName="Check App State 'Profile Icon'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Profile Icon'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="EAfTZaCjw0qn4L3BzdjZdg" DesignTimeRectangle="1491, 328, 21, 24" ElementType="Icon" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='svg-inline--fa fa-user text-lg group-hover:text-primary-700' matching:class='fuzzy' fuzzylevel:class='0.0' tag='svg' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='' /&gt;" Guid="9cdfcae8-6170-47c7-98da-b61f3310e833" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAaCAYAAABctMd+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHSSURBVEhLxZQhiwJREMc3afADWAUFgyCiyWZaUIs2MZiMFkFELFrXIBgMJj+CQdBoM1lMZsEgiohJ0DDHDLxhd/be7t1ycj94LLz/zG/3DU8N+CCG3PhL/lf+eDxgOBxCsVgEwzDoORgMaN8PT/lqtYJUKkVSuXAfcy+08vP5DIlEgkS1Wg222y3t41O9EHOs06GVt9ttErRaLRkRhUKB8l6vJyNGK8/n89S82+1kREwmE8rr9bqMGK1czVbHZrOhHE+gQ9utboeatWQ8HlPebDZlxGjleN3Ul12vVxnzybBOh1aOqFuRTCbBsiwaBT6VGHMvPOWIaZossy/c98NXjuDRG40GjQifXqOw8yN5UHzl7/ebZm1f+/1eln2LVo5HL5fLEAqFXPPGFY1G6W9hNpvJVsYlPxwOdDuUJBwO06zlsr8ol8vB8XiUKqf8drtxQyaTgcViAc/n017CYO10OoV4PM49r9fLUeOQVyoVKiqVSnC/3+2RlsvlQvXY1+12HRnL1S8ynU7D6XRyFPmB9diH/ev1mvdZXq1WKRyNRhz+hn6/T/2dTof3WI6zi0QidIKgC+XZbNYtj8VijhsQdKHHJZ/P564vCbKWy6Vb/gm+AAHOuo3EH32cAAAAAElFTkSuQmCC" InformativeScreenshot="6304dc275f434179c3efc8944a60c812.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/l-eb1aptakyT5YeX1GMMvw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector, Image" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="1416, 326, 27, 27" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg&amp;gt;path' tag='path' /&gt;" Guid="7c6b8314-ddf4-4c73-9fff-999a1c168840" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJsSURBVEhLzZbPS1RxFMXfykZrEyXDlBaGkoIJFWiDKUGRYCORQSSFGORUG4fKYGCwKYwWilqk/bBJKiQixEVBEULhxohaBK37W26cB/fyffe+efOCJlp8FjP33O95d+Z7z4z369sy/Us8/Ua1+b8Mf3xepOniJRo520ed+1upri5BzU076HSmlwpXz9GL+bzpqURZw6X7N6i9rYk8z4uk/1gX/Vwvmf5yhBoe7TkgB27ZXEuZ42kaGx2kp7PXaaqYpdHzJ6jn0L6A8WT+gjknDGPY2rJLDulNd9DayrRpYrLDmYDpp9UZo9EEDPO5IWnOZQeNOIz1t3PS03WwzdQ1Yvj14wLtTG33GzGlFkbxpnRTTIvjw6buIoazk1f8hsSmGnr1uGCEleCPd29zo6m5iOHlkQG/4VT/YSOKw7vlOzLl97VHps6IYXdnuy/Ojw0ZUVxqEzX+GS8Xyu+nGOL6Q/zs3rgRxYX3FpdP1xgxRIJAjD3Torikktv8M+4WLpoaI4aIK4ix1FoUhy8f5uU7jLp0YohshBgJokVxeDJzTQw33j8wdUYMEcTcgCuuhZVo2dPg9yIGdc0lkDQIYjZFgmhxOc6cPCJ9WA9ddwkYIvW5ESBBdIMGccZ63ANd15jwRuq7pvh49VMjBh9O5ShZvzWgBStLt4xJpCFA6rtPDrDU2LOGVL0xGehLB16vPr9tzow0ZBDEyEZtwOB3k1cAk7m114sT5ryKhgyyEXGFBEEw4LvF3mkdJnNNwyIuluGfgMlc09JcMCr/uiHAZK4pLhjXqmIIMBkb4jbz+1UzBJhsd2My8NejqoZh/AZn2cc4F/0u6AAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset Position="TopRight" X="-1" Y="8" />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_12" ReportId="[reportId]" Status="Fail" StepName="User not able to click on prfile Icon" TakeScreenshot="True" TestId="[testId]">
+                          <ra:StepStatus.StepDescription>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ra:StepStatus.StepDescription>
+                        </ra:StepStatus>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="EAfTZaCjw0qn4L3BzdjZdg" DesignTimeRectangle="1491, 328, 21, 24" ElementType="Icon" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class='svg-inline--fa fa-user text-lg group-hover:text-primary-700' matching:class='fuzzy' fuzzylevel:class='0.0' tag='svg' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='' /&gt;" Guid="9cdfcae8-6170-47c7-98da-b61f3310e833" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAaCAYAAABctMd+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHSSURBVEhLxZQhiwJREMc3afADWAUFgyCiyWZaUIs2MZiMFkFELFrXIBgMJj+CQdBoM1lMZsEgiohJ0DDHDLxhd/be7t1ycj94LLz/zG/3DU8N+CCG3PhL/lf+eDxgOBxCsVgEwzDoORgMaN8PT/lqtYJUKkVSuXAfcy+08vP5DIlEgkS1Wg222y3t41O9EHOs06GVt9ttErRaLRkRhUKB8l6vJyNGK8/n89S82+1kREwmE8rr9bqMGK1czVbHZrOhHE+gQ9utboeatWQ8HlPebDZlxGjleN3Ul12vVxnzybBOh1aOqFuRTCbBsiwaBT6VGHMvPOWIaZossy/c98NXjuDRG40GjQifXqOw8yN5UHzl7/ebZm1f+/1eln2LVo5HL5fLEAqFXPPGFY1G6W9hNpvJVsYlPxwOdDuUJBwO06zlsr8ol8vB8XiUKqf8drtxQyaTgcViAc/n017CYO10OoV4PM49r9fLUeOQVyoVKiqVSnC/3+2RlsvlQvXY1+12HRnL1S8ynU7D6XRyFPmB9diH/ev1mvdZXq1WKRyNRhz+hn6/T/2dTof3WI6zi0QidIKgC+XZbNYtj8VijhsQdKHHJZ/P564vCbKWy6Vb/gm+AAHOuo3EH32cAAAAAElFTkSuQmCC" InformativeScreenshot="6304dc275f434179c3efc8944a60c812.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/l-eb1aptakyT5YeX1GMMvw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector, Image" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1416, 326, 27, 27" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;svg&amp;gt;path' tag='path' /&gt;" Guid="7c6b8314-ddf4-4c73-9fff-999a1c168840" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJsSURBVEhLzZbPS1RxFMXfykZrEyXDlBaGkoIJFWiDKUGRYCORQSSFGORUG4fKYGCwKYwWilqk/bBJKiQixEVBEULhxohaBK37W26cB/fyffe+efOCJlp8FjP33O95d+Z7z4z369sy/Us8/Ua1+b8Mf3xepOniJRo520ed+1upri5BzU076HSmlwpXz9GL+bzpqURZw6X7N6i9rYk8z4uk/1gX/Vwvmf5yhBoe7TkgB27ZXEuZ42kaGx2kp7PXaaqYpdHzJ6jn0L6A8WT+gjknDGPY2rJLDulNd9DayrRpYrLDmYDpp9UZo9EEDPO5IWnOZQeNOIz1t3PS03WwzdQ1Yvj14wLtTG33GzGlFkbxpnRTTIvjw6buIoazk1f8hsSmGnr1uGCEleCPd29zo6m5iOHlkQG/4VT/YSOKw7vlOzLl97VHps6IYXdnuy/Ojw0ZUVxqEzX+GS8Xyu+nGOL6Q/zs3rgRxYX3FpdP1xgxRIJAjD3Torikktv8M+4WLpoaI4aIK4ix1FoUhy8f5uU7jLp0YohshBgJokVxeDJzTQw33j8wdUYMEcTcgCuuhZVo2dPg9yIGdc0lkDQIYjZFgmhxOc6cPCJ9WA9ddwkYIvW5ESBBdIMGccZ63ANd15jwRuq7pvh49VMjBh9O5ShZvzWgBStLt4xJpCFA6rtPDrDU2LOGVL0xGehLB16vPr9tzow0ZBDEyEZtwOB3k1cAk7m114sT5ryKhgyyEXGFBEEw4LvF3mkdJnNNwyIuluGfgMlc09JcMCr/uiHAZK4pLhjXqmIIMBkb4jbz+1UzBJhsd2My8NejqoZh/AZn2cc4F/0u6AAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopRight" X="-1" Y="8" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <uix:NCheckState DisplayName="Check App State 'Departments'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Departments'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="tL5pCsDCk0qULyOrLJsv6w" DesignTimeRectangle="354, 255, 168, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Departments' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Departments' /&gt;" Guid="56410015-2113-499c-a43c-ae93bb7bbe29" InformativeScreenshot="62a52c29c6966ccf9bad6e5010afc8fe.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/TCrxoIb1_0iT8MA69rfJVg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="327, 231, 258, 76" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='hidden xl:flex w-[172px] flex-shrink-0 ml-3 !py-3.5 relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border text-gray bg-white border border-2 border-primary-700 hover:bg-primary-300/20 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Departments' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Departments' /&gt;" Guid="d397c504-9a1f-4a3a-ae4e-678ab1ecabfa" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_13" ReportId="[reportId]" Status="Pass" StepName="User clicked on Department" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_14" ReportId="[reportId]" Status="Fail" StepName="User not able to click on department" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="tL5pCsDCk0qULyOrLJsv6w" DesignTimeRectangle="354, 255, 168, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Departments' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Departments' /&gt;" Guid="56410015-2113-499c-a43c-ae93bb7bbe29" InformativeScreenshot="62a52c29c6966ccf9bad6e5010afc8fe.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/TCrxoIb1_0iT8MA69rfJVg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="407, 213, 206, 60" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='hidden xl:flex w-[172px] flex-shrink-0 ml-3 !py-3.5 relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border text-gray bg-white border border-2 border-primary-700 hover:bg-primary-300/20 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Departments' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Departments' /&gt;" Guid="bdb2fca7-1cbb-4f9c-9fff-cfbfca89d2fe" SearchSteps="FuzzySelector" />
+                      <uix:Target DesignTimeRectangle="327, 231, 258, 76" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='hidden xl:flex w-[172px] flex-shrink-0 ml-3 !py-3.5 relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border text-gray bg-white border border-2 border-primary-700 hover:bg-primary-300/20 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Departments' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Departments' /&gt;" Guid="d397c504-9a1f-4a3a-ae4e-678ab1ecabfa" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset />
-                  </uix:TargetAnchorable.PointOffset>
                 </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="10" DisplayName="Click 'Dry Adult Dog Food'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="3_85OdfKAkqxnoYh6Qj3TA" DesignTimeRectangle="599, 382, 146, 30" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='link' tag='SPAN' /&gt;" Guid="3d862efc-1b2a-4d45-84ef-6bae01b1ec8f" InformativeScreenshot="a5808a3e6637eda71b27e582d2e34cfb.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/3N_eR7S_e0uxthEqktkMLg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset />
-                  </uix:TargetAnchorable.PointOffset>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="5" DisplayName="Click 'Dry Special Needs Diet …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-adult-dog-food" ContentHash="FFAqFbotyUmxY6jteqBISw" DesignTimeRectangle="607, -80, 217, 34" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" Guid="ff729227-e343-4a34-957a-a7bf225b4dd2" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/wNJszl2470qfoi-Wjr3_GQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Adult Dog Food | Wilco' /&gt;" SearchSteps="Selector" Version="V6">
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset />
-                  </uix:TargetAnchorable.PointOffset>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="5" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '+ Add to cart from PLP'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" ContentHash="pQDM5TMen0-P6t2FI9ejOg" DesignTimeRectangle="904, 882, 196, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='+ Add to cart' parentid='__nuxt' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0f87ed7c-e3ce-4f64-9afa-07cf3b20358c" InformativeScreenshot="0ea9163f391ed413836fbf0f2c3ecee8.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/gRH6nDsyUkiizYKSnCrSEw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Dog FoodDry Adult Dog F…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_15" ReportId="[reportId]" Status="Pass" StepName="User can see departments dropdown" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_16" ReportId="[reportId]" Status="Fail" StepName="User not able to see department drop down list" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shop-all" ContentHash="-4WRmMtvC02sFIIijkmHmA" DesignTimeRectangle="495, 387, 1231, 810" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='3' tag='DIV' /&gt;" Guid="70423bbe-7f03-495b-9be4-03dc7ef8c671" InformativeScreenshot="bcc9550353cc8e831009bae5e73c5a62.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/w5lYj7WhpEu1yw3IYkECWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Products | Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Dry Adult Dog Food'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="10" DisplayName="Click 'Dry Adult Dog Food'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="7qK_q6EgBUCSJ5TmA5CfrQ" DesignTimeRectangle="509, 442, 183, 38" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='link' tag='SPAN' /&gt;" Guid="79941b19-1e70-4b8b-8896-33fb792ccca8" InformativeScreenshot="8a1bf71ffa0d27d180e7aee5bc95ad0d.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/JlmcX8_KS0id1xiwI_PisA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_17" ReportId="[reportId]" Status="Pass" StepName="User clicked on Dry Adult dog food" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_18" ReportId="[reportId]" Status="Fail" StepName="User was not able to click on Dry Adult dog food" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us" ContentHash="7qK_q6EgBUCSJ5TmA5CfrQ" DesignTimeRectangle="509, 442, 183, 38" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='link' tag='SPAN' /&gt;" Guid="79941b19-1e70-4b8b-8896-33fb792ccca8" InformativeScreenshot="8a1bf71ffa0d27d180e7aee5bc95ad0d.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/JlmcX8_KS0id1xiwI_PisA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Dry Special Needs Diet …'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,471" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="5" DisplayName="Click 'Dry Special Needs Diet …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us/products/pet/dog-food/dry-adult-dog-food" ContentHash="F1UC9Br-GEm8octT6vzkMA" DesignTimeRectangle="632, 424, 226, 226" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='__nuxt' tag='DIV' /&gt;" Guid="dc3082c0-2d6d-4fdd-a083-652144fec3a3" InformativeScreenshot="b1add1fd49edd6b0519db9e717b20c9a.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/hH3HYYtigEOzvXpdvJY0hg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Adult Dog Food | Wilco' /&gt;" SearchSteps="Selector" Version="V6" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="5" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_19" ReportId="[reportId]" Status="Fail" StepName="User not able to click on Dry special needs" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="prod.farmstore-modern.us/products/pet/dog-food/dry-adult-dog-food" ContentHash="F1UC9Br-GEm8octT6vzkMA" DesignTimeRectangle="632, 424, 226, 226" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='__nuxt' tag='DIV' /&gt;" Guid="dc3082c0-2d6d-4fdd-a083-652144fec3a3" InformativeScreenshot="b1add1fd49edd6b0519db9e717b20c9a.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/hH3HYYtigEOzvXpdvJY0hg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Adult Dog Food | Wilco' /&gt;" SearchSteps="Selector" Version="V6" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="5" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5" />
+            <uix:NCheckState DisplayName="Check App State '+ Add to cart from PLP'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '+ Add to cart from PLP'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" ContentHash="nijGw31NoUqCT31X-cuMWQ" DesignTimeRectangle="904, 882, 196, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='+ Add to cart' parentid='__nuxt' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0f87ed7c-e3ce-4f64-9afa-07cf3b20358c" InformativeScreenshot="0ea9163f391ed413836fbf0f2c3ecee8.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/AfLZ417fwkqKsoA3Pffutg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target DesignTimeRectangle="884, 866, 236, 54" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='+ Add to cart' tag='BUTTON' type='button' class='w-full min-h-[45px] max-h-[45px] tracking-wide relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='+ Add to cart' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0768b1e2-f5c0-4397-b348-75818bef85d0" SearchSteps="FuzzySelector" />
+                            <uix:Target DesignTimeRectangle="884, 624, 226, 93" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Diamond Naturals, Lamb &amp;amp; Rice Light Adult Dog Food, 30 lb' parentid='__nuxt' tag='SPAN' type='' class='text-md text-left group-hover:underline group-hover:text-primary md:text-lg' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Diamond Naturals, Lamb &amp;amp; Rice Light Adult Dog Food, 30 lb' /&gt;" Guid="16ee5cf0-078d-432a-9594-66832eb354eb" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_20" ReportId="[reportId]" Status="Pass" StepName="User clicked on +Add cart from PLP" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_21" ReportId="[reportId]" Status="Fail" StepName="User was not able to click on _Add to cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" ContentHash="nijGw31NoUqCT31X-cuMWQ" DesignTimeRectangle="904, 882, 196, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='+ Add to cart' parentid='__nuxt' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0f87ed7c-e3ce-4f64-9afa-07cf3b20358c" InformativeScreenshot="0ea9163f391ed413836fbf0f2c3ecee8.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/AfLZ417fwkqKsoA3Pffutg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                       <uix:Target DesignTimeRectangle="884, 866, 236, 54" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='+ Add to cart' tag='BUTTON' type='button' class='w-full min-h-[45px] max-h-[45px] tracking-wide relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='+ Add to cart' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0768b1e2-f5c0-4397-b348-75818bef85d0" SearchSteps="FuzzySelector" />
@@ -177,16 +779,213 @@
                     <uix:PointOffset />
                   </uix:TargetAnchorable.PointOffset>
                 </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cart Button'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" ContentHash="rWIIsHnoeESoKFnM782_Lw" DesignTimeRectangle="1688, 226, 37, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Cart' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;span' parentname='Shopping Cart' tag='SPAN' /&gt;" Guid="29b14c39-98c2-44f6-827c-66d87e6874d9" InformativeScreenshot="e130957cd3569fcefefbd77313850bd2.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/nzebL7zyvk-mGYQ5ojGc0g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Remove Cart Button'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="SRXR302dZESXR8mSsjeAXA" DesignTimeRectangle="583, 902, 81, 26" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Remove' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Remove' /&gt;" Guid="dad6db64-13de-4c7d-aa6c-6974756e3e8e" InformativeScreenshot="74a6204fd960f3160853a1cced4ea9f0.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/Pzeuh5Vle0eZJF8i-9HZAg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Added'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_22" ReportId="[reportId]" Status="Pass" StepName="Item added to cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_23" ReportId="[reportId]" Status="Fail" StepName="Item was not added to cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" ContentHash="TQbCozHOkk6a_iOpErYmXA" DesignTimeRectangle="909, 912, 221, 26" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Added' parentid='__nuxt' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Added' /&gt;" Guid="5b967569-6ab5-4497-a353-d3c80daa8aed" InformativeScreenshot="401b774ba20e918f82647d691208f06a.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/pIWF6AWtV0uYoxLoqvl5AQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="886, 895, 267, 61" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Added' tag='BUTTON' type='button' class='w-full min-h-[45px] max-h-[45px] tracking-wide relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Added' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Added' /&gt;" Guid="8967e8d8-4373-4340-b680-09f8ff6cede7" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Cart'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="520,722" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,477" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,366" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="[UiPath.UIAutomationNext.Enums.NScrollDirection.Up]" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,306" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="5" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                          <uix:NMouseScroll.SearchedElement>
+                            <uix:SearchedElement>
+                              <uix:SearchedElement.InUiElement>
+                                <InArgument x:TypeArguments="ui:UiElement" />
+                              </uix:SearchedElement.InUiElement>
+                              <uix:SearchedElement.OutUiElement>
+                                <OutArgument x:TypeArguments="ui:UiElement" />
+                              </uix:SearchedElement.OutUiElement>
+                              <uix:SearchedElement.Target>
+                                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="m1hmSWK9A0iygH5HCLKKjw" DesignTimeRectangle="1755, 332, 45, 42" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Cart' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;span' parentname='Shopping Cart' tag='SPAN' /&gt;" Guid="78de6ca8-ed88-4df0-836a-3b62ccdc3f2c" InformativeScreenshot="2c7294d8406ba468201f0c0dc38090b1.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/6vN8rpGJxUysy7LRW_bFog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+                                  <uix:TargetAnchorable.PointOffset>
+                                    <uix:PointOffset />
+                                  </uix:TargetAnchorable.PointOffset>
+                                </uix:TargetAnchorable>
+                              </uix:SearchedElement.Target>
+                              <uix:SearchedElement.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:SearchedElement.Timeout>
+                            </uix:SearchedElement>
+                          </uix:NMouseScroll.SearchedElement>
+                        </uix:NMouseScroll>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cart'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,185" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="m1hmSWK9A0iygH5HCLKKjw" DesignTimeRectangle="1755, 332, 45, 42" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Cart' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;span' parentname='Shopping Cart' tag='SPAN' /&gt;" Guid="78de6ca8-ed88-4df0-836a-3b62ccdc3f2c" InformativeScreenshot="2c7294d8406ba468201f0c0dc38090b1.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/6vN8rpGJxUysy7LRW_bFog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="520,218" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_24" ReportId="[reportId]" Status="Fail" StepName="User not able to hover over cart and click on cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us" ContentHash="m1hmSWK9A0iygH5HCLKKjw" DesignTimeRectangle="1755, 332, 45, 42" DesignTimeScaleFactor="1.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Cart' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;span' parentname='Shopping Cart' tag='SPAN' /&gt;" Guid="78de6ca8-ed88-4df0-836a-3b62ccdc3f2c" InformativeScreenshot="2c7294d8406ba468201f0c0dc38090b1.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/6vN8rpGJxUysy7LRW_bFog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Shopping Cart'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_26" ReportId="[reportId]" Status="Pass" StepName="User clicked on cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_27" ReportId="[reportId]" Status="Fail" StepName="User was not able to click on cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="V08hOE03okK3jgf0YApaWA" DesignTimeRectangle="94, 441, 1126, 62" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" Guid="5e2e426b-a9b8-4e20-8d64-8d2097564e52" InformativeScreenshot="59f4d7f47ef65f28b52ce20105dbd5b9.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/_yZ5nkGfR0ujTmlMJ5hF3Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'Remove Cart Button'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="StepStatus_28" ReportId="[reportId]" Status="Compare" StepName="Product Added to cart from PLP successfully" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Remove Cart Button'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7847fa10-762c-45ec-821b-a6248ee0615f" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="fLawjjoxM0qLwixW4Mzvuw" DesignTimeRectangle="583, 902, 81, 26" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Remove' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Remove' /&gt;" Guid="dad6db64-13de-4c7d-aa6c-6974756e3e8e" InformativeScreenshot="74a6204fd960f3160853a1cced4ea9f0.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/rWKSvuAE_Em3hpX7weOFNA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="532, 886, 154, 58" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Remove' tag='BUTTON' type='button' class='flex w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border-transparent text-primary-700 dark:text-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Remove' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Remove' /&gt;" Guid="005bd561-8f46-488b-9389-7d1d0db70203" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_29" ReportId="[reportId]" Status="Fail" StepName="Item was not added to the cart" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="staging.farmstore-modern.us/shopping-cart" ContentHash="fLawjjoxM0qLwixW4Mzvuw" DesignTimeRectangle="583, 902, 81, 26" DesignTimeScaleFactor="1.3499999046325684" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Remove' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Remove' /&gt;" Guid="dad6db64-13de-4c7d-aa6c-6974756e3e8e" InformativeScreenshot="74a6204fd960f3160853a1cced4ea9f0.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/rWKSvuAE_Em3hpX7weOFNA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="532, 886, 154, 58" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Remove' tag='BUTTON' type='button' class='flex w-fit relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full bg-transparent border-transparent text-primary-700 dark:text-primary-400 focus:outline-none focus:outline-offset-0 focus:ring focus:ring-primary-400/50 dark:focus:ring-primary-300/50 hover:bg-primary-300/20 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='Remove' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Remove' /&gt;" Guid="005bd561-8f46-488b-9389-7d1d0db70203" SearchSteps="FuzzySelector" />
@@ -196,9 +995,9 @@
                     <uix:PointOffset />
                   </uix:TargetAnchorable.PointOffset>
                 </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158.66666666666666" sap2010:WorkflowViewState.IdRef="StepStatus_1" ReportId="[reportId]" Status="Pass" StepName="Product Added to cart from PLP successfully" TakeScreenshot="True" TestId="[testId]">
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="StepStatus_1" ReportId="[reportId]" Status="Pass" StepName="Product Added to cart from PLP successfully" TakeScreenshot="True" TestId="[testId]">
               <ra:StepStatus.StepDescription>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
@@ -222,8 +1021,20 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="dLopaiuHNkCUr60VobLKrQ" IconBase64="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" InformativeScreenshot="b819c5ad149e482319a90019169ef101.jpg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/9AeyWLKYaESrUeAMLr0kIw" Selector="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" Url="https://prod.farmstore-modern.us/" Version="V3" />
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" ContentHash="5s9Y8wYSyUOVDApW26I0kA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAxUSURBVGhDvZl7bFR1FsebbBQWFQrq8pJ2CqXvTqczLRb6ms6UtrQ8BrObmI1Kk325f2xITDZZQS0m667vKYUy0idvd5cVXDEbd6WdPmmLSPWPVWOyDGAftNBOW1QK987vbM75Pe6dsYK46i/55nvO+d2Z+znn/m6BEhX1HayA0xY96rJXjhZne0fcWcdH3dmBy66s4IgrC0Zc2XDZnR0ccTkCo+5s/6gryzvodniGnTZL5Pf8oAuhx9zZW0eLsvwSlLspLpI516UihxDuOdilInv/iNOx5QdtBsEvu1ZVXXY5xkddWYyDOsKcA0o3aga4aMZpZ5ec6KTm772Ry66sqlF1NORETXBYdyKgmDTGCFnkgGEJSrGdci4Zo9thxGmvirzv/71wMiNF2f00TZqgQ0zScAkqpyqBJLjKC2Ud40yG+RApk3L0oUJ74Dt7GiPOVVtGihxBY5J28cglqBnWgESo4UI7M0MqL0BQDk0qCBM1MViQGbyYb/NE8tzWwscpYSWYmibCySk6DUAuDsFdgBZkskEEpNjGEJZychvFXDK2wWC+DQbzbN/uSA0X2KvCpqtgTDEBkctHr0DkRA0wUcu3MYQjz1dOMXmeEQ/k22AgLwMG86y318Qw/mgTj/mmj1142MQUpHAOw+FEncBkPc/GENIQh5b6DD03gw0X2LZEcs648OUZLsgcRzCCzrfJMxl2VtUUjWlSzJvggASZl0GTJKdpco8UghKsKSblSlnHh3OSbv1iDxVmBsxTND1mNTU1PRNgmNQUI3OhXCtTwBhLyDUYWxGWy5yvSWcX1lj7I3nDFr4waooR4OGA4dObaaph0+QTNDmJXTTX1qSL3AoX1xjOlS6FTeyI5KZle91jefmJIjVNAcUbUEDmOENNUU5yoCwXJht9MH32PdCGBkEtbQrY5BkInX8Z9P6NoPdlgd7nQDG9Fz0LyGXc54CQ2sO63awg9NuiI/mjHEc27yvY54Gz5dkznkV8kfg05QSNqQ7/tIygv+lioydA719PQKE+O9P7MpneixKQfeiZIOoixmt5rvXYwp+CrdljsR95CBxHHoLf/rHEDBgBLR6tED72YPULEJqaCgMcCjJ4+4PrUO+fhjr/NLR9cgM+HdbDrgF9CtiFl5jeawO9z8adYHkewloP1rg0ijNkPfwp2A97KjOPeFjmYQ/YD2+Gf/7sQQHIz6n5LNJZ5TGbaNgTxnSi/zo8vu9zyK6agFU7JsmzdwhVTcCm6qtwov9G2GdCn/kITO/NAL0nA7SeDMwhhOAi1nqsPO5JZzrFVgj1WreaGtjcn3nYwxAeG3nsxTLx0ogXaDVCp8MFqdXpMF79vIIYCobgN80cPEsAZ2EsRHVqhjeF1+JnVBPnXyQoAca0nnQBmw4ilmJ6b5qop/nV8bEd2sRshz0s85AHbIc8gF77eB67uDqNXVidRsAipnxwcymTxwZBNninwoAdzxhSNdM+Cj+jmtCmQD9bBiGCI4GQEZ9CT4VQb6qqgd8SHWU7vGGT7eAmiFRu40b4qNDKLuSksfM52EQakOeksqtvv6mm9+umq+B4JmgSh7WH1YJGTg3y/FdNV9X3sMnTAjqVhXpSmX4qlYD1nhSmn0oBytGxRnkK6F0plVG2Axu9GQc2Atcmcmwg4+BG9vzv8hV04MFUCOSkwsDmEnXTt/qvE8jM4k3MLGPvrbPX1ffpp3MMOFKycu1UMoR6khmPk7i6EqujMvZv8Fv3bwTrgY3M3IT1wAaG9b61NiB4obFX/6xuWPHKJGQ+HTT0jCm+mUzX/dL0FEIXdwvoJBRDhbhTTetOVHtaN+bJb2IDAev+DfA1Yj//UzE7vyqFBbjg2vun6WafDOtgezpIQhAZ31zjM9SC6l1gE30cEEEJNpFDdycwXksA/VQCI3UnQKg7IRCVvn89s+7bAKh00noe71/PMMbaCY+dGji3KkX9zG/96AZkPD3O9ZRwAcjdXDPXg/z6p4xr/iGP0fQAaAhJWmlyJaZ1cde740Hrig9GpTcj5HpG/jVy15RBIDuZnctKYvJx+1qvgfWpcSUJG1abIZbw5vqeli/l14LeRWCgd8cTpKEVTO9aQfuUY9wdD1Fp+ypYWvN6CFcFpDVVyJilNlew6l/kwLmsZNUA3tQMK5V+kzxyT9bCGkBQBSu1nKt7BWg8Znr3coqj0prWB1Oby1kqAjdVAMbkjeU8J5WzVb4y+DA3BbShAbrRm2enIX37OKRtHyNHEHJzHOHy2rSI61o+En86a5MSEPSuOKZ1xQFK5FRDp3qnhWpRKU3lAQ5ZASlN5UyBN5YrYR31h6258OWZPrrXYDBEQFwcbmZF7kXmY/DxEP97Epvo4aCdFgKU0rtiGdZknXKqxQaiUhrKj6c0lEOKhG1YFxGvYySMG8rhzN/r1OOubJiE1O1jkLp9XPjtq+TlCfV9of8+C1pnLOgR0jpjQO+MYXpXDMNY5Z2x/qjUxgovhxOw2IzMG9ZBckMZSyZfh84e9m5SNzz+/nVI2TYGKduFtnEoqt1C8rrj708bDby3huldy5hOgMtYqGsZ0zqXgdaxjHJ0Jay3P1AdlVRXVskhy1hyfRmgCLxeite4eN439KG66Zb6KUjeNqaEUMnbrihQ8174NWOwpX5SfQ8bOSrgHiDpnQ8wvXMpQ6ecakt53CnUsWRTlK3ZGU1wdWWQVF9KTSRRXMbIzcJafSlzv74Fpq5/TjceGA9B8YtBSNp2hcCTnuRuxGOqhtfIWvFLQRgQf4BNTX8OofdymNaxlIN2LBHxEqabHGtaxxKedy5h4F/E/5GfVFfqT6orFaDopYx8r6yJOuai9twpn5oeNvFY/STBfUWiAbMerZ+kz8g18emzAhrhFjOU1rEYtPbFKtc7yTGneqh9sfEP/MS60q2Je0vBUAkzxRH1Epb4Gq/tOnNQQeA6dmYaXC+MQ8KTVyDxySvKpR6tm4BjpjOP640PG2Hcj8eGg2nti5T0jkVM7zByVecyfk9k8TqjE/eWBBP2ljAUAQpI9AQp3Bd7soZPAo+AeX08qMO7/7kONe9+AbtOfgHHzlwLmziuqemr8Fy3D46+lQx6x0LG4RaKeCHo7Qsp5/oJ6FyMayGo4yNXwt6SKgXqQ1/LEnxrgfRaCawU+UrfWmoC85Vi33n4EfbGJ/8KA7zZ6h38AJyHHmHOxkKGcFJ6+/0MpWpt95MQnvt9jLzt/uYweFz4FFb61o5LsJV7CJZrT3FYTo3IHPdE7jz4CDzX5SPAz6YuKWCMsVZz+gA4mjz8s3uK4cLJpRyIwO4DVFjcdh8z51rbvaRr/uiZf0MX7yupihew8b5ipsDJpXgevwf316KrmOq1QnuKmXLaN9fc7PdH7KC334uA5BwOoReIGLUgzHEv1L7g5r/oja8t7lcQQhI+vtYtZN6PzM01eb0bVtS6OXytG+w+J5z/9yLQBRQB+hFyAebC5zOq+eeD1jafPNQ2/1wk71eWxee0xNe6gyt2u0GKAEyOMNxdTIJRjeTie1KR+W4XVB9NZgikt5GY1hbN9LZopvmjRQ1zhJ5HNa55Qfi6oxO5VtS4KpfvdjGUvCmXG1bscnHtdsHyXS4wruF79DlZR6drjc/l1+UJUAOOx/ME8DzQlc9lWutcct0ffXv/WxO/q3gHgcyoIgWpajVFM1zHFUfXc/3t2HIOJgH9c0GTTrD3MK31HqxxYdwyd+Zf6N5qLd/lqiKwmiKCiJMuGhA1trzGBbRn3he5dNTDjVkcyCTdj7CRtbsZ1VvvhpD/7pu/tLdaFq/TE1dTFLTsdBqQO4vAUuNkcaidRi1up5PqtIfXROTn31lAcAgWrrtA99/F0LXWOUxvnYNx8EbLXZWRPN9qWbxOS9xOZ4AAdzqZpVo4z0VciDnfk1L7heyJ/WkcjkDngIAULvKWHwOpdU4/+Gd/sxf2dpZlp7NKgsUicHUhgcZWY8xdxV6+h8qtzYHz78xHMC4Bqrf+WEHrrbOZ1jIrqLXM/nbn/ZsufBqWamczwXoLCVQq5tUCaiCmuoD2YrwFVK//q0UAzgalk7NUrLfeOa61zK4Cf/RX/+Pi+1rUiNdZGest7Cdw3oBZLNZbAGt254DWgrBCJ2eB3jKLaSfvBL11lv+Gf9bWHxR8piWa8cR4C7zLXsn3x7xaEMAmlr2Sz/5ydCloLXcEb7TcEdBO3nlca5nlveH/0ZbvCvp/8b6M+fdIJ3YAAAAASUVORK5CYII=" InformativeScreenshot="3f79ae5bd42fc27532bac205f8ce6835.jpg" Reference="9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg" Selector="&lt;html app='chrome.exe' title='Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" Url="https://staging.farmstore-modern.us/" Version="V3">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
   </Sequence>
 </Activity>

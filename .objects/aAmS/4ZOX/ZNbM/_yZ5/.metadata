@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Shopping Cart",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "_yZ5nkGfR0ujTmlMJ5hF3Q",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/_yZ5nkGfR0ujTmlMJ5hF3Q",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-05T10:19:12.7370765Z",
+  "Updated": "2026-06-05T10:19:12.7370765Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="gaE9NnS7n0-pu054Uw906Q" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/nzebL7zyvk-mGYQ5ojGc0g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" DesignTimeRectangle="1688, 226, 37, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Cart' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div&amp;gt;span' parentname='Shopping Cart' tag='SPAN' /&gt;" Guid="29b14c39-98c2-44f6-827c-66d87e6874d9" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e130957cd3569fcefefbd77313850bd2.jpg" xmlns="">e130957cd3569fcefefbd77313850bd2.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

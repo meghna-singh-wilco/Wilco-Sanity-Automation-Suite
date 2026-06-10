@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="nijGw31NoUqCT31X-cuMWQ" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/gRH6nDsyUkiizYKSnCrSEw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/products/pet/dog-food/dry-special-needs-diet-dog-food" DesignTimeRectangle="904, 882, 196, 23" DesignTimeScaleFactor="1.2000000476837158" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='+ Add to cart' parentid='__nuxt' tag='SPAN' type='' class='duration-200 flex-1' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0f87ed7c-e3ce-4f64-9afa-07cf3b20358c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shop Dry Special Needs Diet Dog Food | Wilco' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="2">
+          <Target DesignTimeRectangle="884, 866, 236, 54" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='+ Add to cart' tag='BUTTON' type='button' class='w-full min-h-[45px] max-h-[45px] tracking-wide relative items-center inline-flex text-center align-bottom justify-center leading-[normal] px-4 py-3 rounded-full text-white dark:text-surface-900 bg-primary-700 dark:bg-primary-400 border border-primary-700 dark:border-primary-400 focus:outline-none focus:outline-offset-0 focus:ring hover:bg-primary-800 dark:hover:bg-primary-300 hover:border-primary-800 dark:hover:border-primary-300 focus:ring-primary-400/50 dark:focus:ring-primary-300/50 transition duration-200 ease-in-out cursor-pointer overflow-hidden select-none' aaname='+ Add to cart' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='+ Add to cart' /&gt;" Guid="0768b1e2-f5c0-4397-b348-75818bef85d0" SearchSteps="FuzzySelector" />
+          <Target DesignTimeRectangle="884, 624, 226, 93" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Diamond Naturals, Lamb &amp;amp; Rice Light Adult Dog Food, 30 lb' parentid='__nuxt' tag='SPAN' type='' class='text-md text-left group-hover:underline group-hover:text-primary md:text-lg' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Diamond Naturals, Lamb &amp;amp; Rice Light Adult Dog Food, 30 lb' /&gt;" Guid="16ee5cf0-078d-432a-9594-66832eb354eb" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="0ea9163f391ed413836fbf0f2c3ecee8.jpg" xmlns="">0ea9163f391ed413836fbf0f2c3ecee8.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

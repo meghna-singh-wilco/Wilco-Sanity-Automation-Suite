@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Processing",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Jr7aAf2SEEm5m0czse2BEg",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/Jr7aAf2SEEm5m0czse2BEg",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/VOqfoVF2pUuhnxQ-LDdzWw",
+  "Created": "2026-06-10T08:08:01.5216656Z",
+  "Updated": "2026-06-10T08:08:01.5216656Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

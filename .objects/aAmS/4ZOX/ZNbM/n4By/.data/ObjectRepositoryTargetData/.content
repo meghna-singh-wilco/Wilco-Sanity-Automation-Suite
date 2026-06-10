@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MY1YZyXMLUm1QPs3C21Spg" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/oxYrXTMBMEWx0_vFlUmPfQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="farmstore-modern.us/shopping-cart" DesignTimeRectangle="1223, 612, 179, 56" DesignTimeScaleFactor="1.125" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='coupon-code' tag='INPUT' type='text' class='w-1/2 h-[50px] border rounded-[10px] border-accent-700 bg-white px-2' aaname='Coupon Code' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="803a9e56-fd2d-4524-8ad9-1e2bf5152225" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Shopping Cart | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="1223, 583, 383, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='font-bold' tag='LABEL' type='' aaname='Coupon Code' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Coupon Code' /&gt;" Guid="c9668c02-78cc-40df-826d-07e08b78f449" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="06ed7c8a69f76f7ebdfda0f828d67ce7.jpg" xmlns="">06ed7c8a69f76f7ebdfda0f828d67ce7.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

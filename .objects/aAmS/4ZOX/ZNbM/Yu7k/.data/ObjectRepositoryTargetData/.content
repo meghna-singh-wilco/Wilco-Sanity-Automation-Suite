@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qwlwVtKsbEeAPq1zWHmMIw" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/JumHtNtDJkKl7NpVIIyZFg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="staging.farmstore-modern.us/checkout" DesignTimeRectangle="342, 379, 809, 51" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" Guid="efe6768d-8c8b-4968-87fb-cd9ea0dabb18" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Checkout | Shop Home, Backyard, Pet, Farm &amp;amp; Rural Lifestyle - Wilco Farm Stores' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a7f0f5a7f7ab35532b89fb67b5f31933.jpg" xmlns="">a7f0f5a7f7ab35532b89fb67b5f31933.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

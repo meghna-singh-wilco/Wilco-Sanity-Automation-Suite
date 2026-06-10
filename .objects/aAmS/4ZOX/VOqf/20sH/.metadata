@@ -1,0 +1,14 @@
+﻿{
+  "Name": "E-260526-1228Trupti Bho…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "20sHWFkKqUC8oreileVE2g",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/20sHWFkKqUC8oreileVE2g",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/VOqfoVF2pUuhnxQ-LDdzWw",
+  "Created": "2026-06-10T07:44:02.1465613Z",
+  "Updated": "2026-06-10T07:44:02.1465613Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

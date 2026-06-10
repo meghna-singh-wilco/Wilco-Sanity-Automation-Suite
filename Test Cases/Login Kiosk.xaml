@@ -50,6 +50,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -111,7 +112,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login_Kiosk" sap:VirtualizedContainerService.HintSize="927,1503" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Login_Kiosk" sap:VirtualizedContainerService.HintSize="1223,2454" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="testId" />
     </Sequence.Variables>
@@ -120,45 +121,104 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="StartSuite_2" ReportId="[reportId]" SuiteName="Login Kisok Suite" suiteId="[SuiteId]" />
-    <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="StartTest_2" Priority="Low" ReportId="[reportId]" SuiteId="[suiteId]" TagName="Login" TestName="Login Kisok Test" testId="[testId]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome OrWilcoKiosk" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1244" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="784f342a-a2a2-4682-a029-006df5073420" Version="V2">
+    <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="488,118" sap2010:WorkflowViewState.IdRef="StartSuite_2" ReportId="[reportId]" SuiteName="Login Kisok Suite" suiteId="[SuiteId]" />
+    <ra:StartTest ContinueOnError="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="488,118" sap2010:WorkflowViewState.IdRef="StartTest_2" Priority="Low" ReportId="[reportId]" SuiteId="[suiteId]" TagName="Login" TestName="Login Kisok Test" testId="[testId]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Chrome OrWilcoKiosk" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2195" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="784f342a-a2a2-4682-a029-006df5073420" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1050" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2001" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'McMinnville Farm Store'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5">
-              <uix:NClick.Target>
+            <uix:NCheckState CheckWindowActive="True" DisplayName="Check App State 'McMinnville Farm Store'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,975" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'McMinnville Farm Store'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="kiosk-staging.farmstore-modern.us" ContentHash="d_hYdXLhBkappuTMoFmNTw" DesignTimeRectangle="27, 193, 101, 38" DesignTimeScaleFactor="0.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='McMinnville Farm Store' parentid='cdk-step-content-0-0' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='McMinnville Farm Store' parentid='cdk-step-content-0-0' tag='SPAN' type='' class='text-30 text-semibold text-center' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='McMinnville Farm Store' /&gt;" Guid="aa11fd20-1122-4a5d-9208-30804b6b71f9" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/9iZp5koqVki_jLwcybUkXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_2" ReportId="[reportId]" Status="Compare" StepName="User Clicked on McMinnville Farm Store" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_3" ReportId="[reportId]" Status="Fail" StepName="User not able to Click on McMinnville Farm Store" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
                 <uix:TargetAnchorable BrowserURL="kiosk-staging.farmstore-modern.us" ContentHash="d_hYdXLhBkappuTMoFmNTw" DesignTimeRectangle="27, 193, 101, 38" DesignTimeScaleFactor="0.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='McMinnville Farm Store' parentid='cdk-step-content-0-0' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='McMinnville Farm Store' parentid='cdk-step-content-0-0' tag='SPAN' type='' class='text-30 text-semibold text-center' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='McMinnville Farm Store' /&gt;" Guid="aa11fd20-1122-4a5d-9208-30804b6b71f9" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/9iZp5koqVki_jLwcybUkXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="StepStatus_2" ReportId="[reportId]" Status="Compare" StepName="User Clicked on McMinnville Farm Store" TakeScreenshot="True" TestId="[testId]">
-              <ra:StepStatus.StepDescription>
-                <InArgument x:TypeArguments="x:String">
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </InArgument>
-              </ra:StepStatus.StepDescription>
-            </ra:StepStatus>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Kiosk'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5">
-              <uix:NClick.Target>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState CheckWindowActive="True" DisplayName="Check App State 'Kiosk'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,966" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,412" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Kiosk'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="kiosk-staging.farmstore-modern.us" ContentHash="5utWVDJ7g0OudhTXZsTT5A" DesignTimeRectangle="56, 202, 43, 19" DesignTimeScaleFactor="0.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Kiosk' parentid='cdk-step-content-0-1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Kiosk' parentid='cdk-step-content-0-1' tag='SPAN' type='' class='text-30 text-semibold text-center' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Kiosk' /&gt;" Guid="9cfe8d7d-16be-499c-94ec-195394c51eca" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/wujsmnaYBkSVPUcLVJIFwQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_1" ReportId="[reportId]" Status="Compare" StepName="User Logged in" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="StepStatus_4" ReportId="[reportId]" Status="Fail" StepName="User not able to Log in" TakeScreenshot="True" TestId="[testId]">
+                    <ra:StepStatus.StepDescription>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ra:StepStatus.StepDescription>
+                  </ra:StepStatus>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
                 <uix:TargetAnchorable BrowserURL="kiosk-staging.farmstore-modern.us" ContentHash="5utWVDJ7g0OudhTXZsTT5A" DesignTimeRectangle="56, 202, 43, 19" DesignTimeScaleFactor="0.5" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Kiosk' parentid='cdk-step-content-0-1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Kiosk' parentid='cdk-step-content-0-1' tag='SPAN' type='' class='text-30 text-semibold text-center' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Kiosk' /&gt;" Guid="9cfe8d7d-16be-499c-94ec-195394c51eca" ImageBase64="" Reference="9dHQDpKOSEKlUU6D1TIPyQ/wujsmnaYBkSVPUcLVJIFwQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='OrWilcoKiosk' /&gt;" SearchSteps="Selector" Version="V6" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="StepStatus_1" ReportId="[reportId]" Status="Compare" StepName="User Logged in" TakeScreenshot="True" TestId="[testId]">
-              <ra:StepStatus.StepDescription>
-                <InArgument x:TypeArguments="x:String">
-                  <Literal x:TypeArguments="x:String" Value="" />
-                </InArgument>
-              </ra:StepStatus.StepDescription>
-            </ra:StepStatus>
-            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" ScopeIdentifier="784f342a-a2a2-4682-a029-006df5073420" Version="V5" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

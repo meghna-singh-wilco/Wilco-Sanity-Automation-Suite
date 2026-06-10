@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="1CaIgZT2vU-hk6PTBPay4g" Reference="p3-Jo5qN6ECAsPu8AYAZgQ/OY4RTWTv8EuKVrVnmQYZtA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="dev-kkgsbvqd60usiwkk.us.auth0.com/u/login" DesignTimeRectangle="720, 755, 480, 78" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" Guid="76f50e3f-b25e-4587-b097-a558ff49c414" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in | back40' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="ffa48fd6e89cc0bfcc514c27715fbe49.jpg" xmlns="">ffa48fd6e89cc0bfcc514c27715fbe49.jpg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

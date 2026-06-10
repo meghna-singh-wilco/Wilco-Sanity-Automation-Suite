@@ -1,0 +1,14 @@
+﻿{
+  "Name": "'Wilco Farm Stores Trup…'",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "Fo4deczJQ0KeOy-WIX2cjw",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/Fo4deczJQ0KeOy-WIX2cjw",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-09T12:33:17.4526857Z",
+  "Updated": "2026-06-09T12:33:17.4526857Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

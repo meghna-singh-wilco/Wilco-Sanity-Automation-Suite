@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Profile Icon after logged in",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "l-eb1aptakyT5YeX1GMMvw",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/l-eb1aptakyT5YeX1GMMvw",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/ZNbMPi8TYkGAMvEfh4actg",
+  "Created": "2026-06-04T11:06:15.3416912Z",
+  "Updated": "2026-06-09T10:07:40.9720941Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

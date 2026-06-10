@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Shop Home, Backyard, Pet, Farm & Rura",
+  "Type": "Screen",
+  "Id": "MajmyeyINUKfT9Wmo_LxZQ",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/MajmyeyINUKfT9Wmo_LxZQ",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/4ZOXkI0BhkWq8H_4-TFz4Q",
+  "Created": "2026-06-05T08:50:44.9834291Z",
+  "Updated": "2026-06-05T08:50:44.9834291Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

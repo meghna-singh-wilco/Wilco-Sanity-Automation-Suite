@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="riu4UVmoHkW9ZPTpll51mQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="back40-staging.farmstore-modern.us/dashboard" DesignTimeRectangle="1046, 699, 204, 204" ElementType="Icon" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl src='assets/images/dashboard/fulfillment.svg' tag='IMG' type='' class='' aaname='' matching:src='fuzzy' fuzzylevel:src='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f93c2bc5-e8d9-47d3-b824-07edb74ff615" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Back40' /&gt;" SearchSteps="FuzzySelector" Version="V6">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1083, 918, 130, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Fulfillment' tag='SPAN' type='' class='mt-2 text-30 text-center' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Fulfillment' /&gt;" Guid="ca1b4063-fb10-4f06-8171-596051a715e4" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3b89f7d9d7f5f32098ad502dbeff8ad7.jpg" xmlns="">02RVpNmfgK0-gf600s9IAvQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Fulfillment",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "JRTKvy4xtk-iI-D7c4UPww",
+  "Reference": "9dHQDpKOSEKlUU6D1TIPyQ/JRTKvy4xtk-iI-D7c4UPww",
+  "ParentRef": "9dHQDpKOSEKlUU6D1TIPyQ/VOqfoVF2pUuhnxQ-LDdzWw",
+  "Created": "2026-06-10T07:36:33.8915113Z",
+  "Updated": "2026-06-10T07:36:33.8915113Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.33.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
